@@ -1,0 +1,17 @@
+{
+    "usuario": "lv.prieto",
+    "contrasenia": "P00",
+    "id": 4,
+    "apodo":"LauP",
+    "correoElectronico": "lv.prieto@uniandes.edu.co",
+    "facturas":[
+        {
+            "referencia":"R0007",
+            "fecha":"02/03/2018"
+        },
+        {
+            "referencia":"R0008",
+            "fecha":"02/12/2018"
+        }
+    ]
+}

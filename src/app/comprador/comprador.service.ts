@@ -5,8 +5,10 @@ import { HttpClient } from '@angular/common/http';
 import { Comprador } from './comprador';
 import { CompradorDetail } from './comprador-detail';
 
+import { environment } from '../../environments/environment';
 const API_URL = "../../assets/";
 const compradores = 'compradores.json';
+const comprador = 'comprador-'
 
 /**
 * Servicio proveedor de todo lo relacionado con compradores
@@ -35,7 +37,7 @@ export class CompradorService {
     * @returns Los detalles del comprador
     */
    getCompradorDetail(compradorId): Observable<CompradorDetail> {
-    return this.http.get<CompradorDetail>(API_URL + compradores + '/' + compradorId);
+    return this.http.get<CompradorDetail>(API_URL+comprador+compradorId+'.json');
 }
 
 }

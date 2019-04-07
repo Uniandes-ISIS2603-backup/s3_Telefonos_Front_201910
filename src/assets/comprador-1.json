@@ -1,0 +1,17 @@
+{
+    "usuario": "da.babtiva",
+    "contrasenia": "B00",
+    "id": 1,
+    "apodo":"DaniB",
+    "correoElectronico": "da.babtiva@uniandes.edu.co",
+    "facturas":[
+        {
+            "referencia":"R0001",
+            "fecha":"02/03/2018"
+        },
+        {
+            "referencia":"R0002",
+            "fecha":"02/12/2018"
+        }
+    ]
+}

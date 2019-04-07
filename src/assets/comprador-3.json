@@ -1,0 +1,17 @@
+{
+    "usuario": "rj.gonzalez10",
+    "contrasenia": "R00",
+    "id": 3,
+    "apodo":"RodriG",
+    "correoElectronico": "rj.gonzalez10a@uniandes.edu.co",
+    "facturas":[
+        {
+            "referencia":"R0005",
+            "fecha":"02/03/2018"
+        },
+        {
+            "referencia":"R0006",
+            "fecha":"02/12/2018"
+        }
+    ]
+}

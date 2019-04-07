@@ -1,14 +1,15 @@
 <div class="panel-body">
   <div class="border margin">
-      <p class="h3 p-3">{{compradorDetail.usuario}}<p> 
-      <div class="row">
-          <div class="col">
-              <dl>     
-                  <dt>Correo</dt>
-                  <dd>{{compradorDetail.correoElectronico}}</dd>
-              </dl>
-          </div>
-
-      </div>
+    <h2>Usuario:  {{compradorDetail.usuario}}</h2>
+    <p>Correo electronico: {{compradorDetail.correoElectronico}}</p>
+    <p>Nickname: {{compradorDetail.apodo}}</p>
+    <h4>Facturas</h4>
+    <ul class="list-group" *ngFor = "let factura of compradorDetail.facturas">
+      <li class="list-group-item">
+        Referencia: {{factura.referencia}}
+        <br>
+        Fecha de expedicion: {{factura.fecha}}
+      </li>
+    </ul>
   </div>
 </div>

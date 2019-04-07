@@ -2,22 +2,26 @@
   "usuario": "da.babtiva",
   "contrasenia": "B00",
   "id": 1,
+  "apodo":"DaniB",
   "correoElectronico": "da.babtiva@uniandes.edu.co"
   }, {
     "usuario": "af.daza",
     "contrasenia": "A00",
     "id": 2,
+    "apodo":"PipeD",
     "correoElectronico": "af.daza@uniandes.edu.co"
   },
   {
     "usuario": "rj.gonzalez10",
     "contrasenia": "R00",
     "id": 3,
+    "apodo":"RodriG",
     "correoElectronico": "rj.gonzalez10a@uniandes.edu.co"
   },
   {
     "usuario": "lv.prieto",
     "contrasenia": "P00",
     "id": 4,
+    "apodo":"LauP",
     "correoElectronico": "lv.prieto@uniandes.edu.co"
   }]

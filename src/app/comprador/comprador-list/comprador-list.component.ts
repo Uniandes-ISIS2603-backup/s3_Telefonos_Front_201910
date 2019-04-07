@@ -51,7 +51,7 @@ export class CompradorListComponent implements OnInit {
 getCompradorDetail(): void {
   this.compradorService.getCompradorDetail(this.comprador_id)
       .subscribe(selectedComprador => {
-          this.selectedComprador = selectedComprador
+          this.selectedComprador = selectedComprador;
           console.log(this.selectedComprador);
           
       });

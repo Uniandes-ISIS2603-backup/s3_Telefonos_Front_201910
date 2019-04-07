@@ -1,0 +1,17 @@
+{
+    "usuario": "af.daza",
+    "contrasenia": "A00",
+    "id": 2,
+    "apodo":"PipeD",
+    "correoElectronico": "af.daza@uniandes.edu.co",
+    "facturas":[
+        {
+            "referencia":"R0003",
+            "fecha":"02/03/2018"
+        },
+        {
+            "referencia":"R0004",
+            "fecha":"02/12/2018"
+        }
+    ]
+}

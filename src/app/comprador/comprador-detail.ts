@@ -1,9 +1,12 @@
-import { Factura } from "../factura/factura";
+
 
 import { Comprador } from "./comprador";
+import { Factura } from "../factura/factura";
 
 
 export class CompradorDetail extends Comprador {
-    /** Las facturas del comprador **/
-    facturas : Factura[];
+    /**
+     * Facturas asociadas al comprador
+     */
+    facturas: Factura[];
 }

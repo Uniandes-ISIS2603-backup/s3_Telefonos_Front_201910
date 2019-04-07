@@ -23,4 +23,9 @@ export class Comprador {
     * El correo del compador
     */
    correoElectronico: string;
+
+   /**
+    * El apodo del compador
+    */
+   apodo: string;
 }
