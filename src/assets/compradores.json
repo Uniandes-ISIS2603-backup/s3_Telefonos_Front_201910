@@ -1,0 +1,23 @@
+[{
+  "usuario": "da.babtiva",
+  "contrasenia": "B00",
+  "id": 1,
+  "correoElectronico": "da.babtiva@uniandes.edu.co"
+  }, {
+    "usuario": "af.daza",
+    "contrasenia": "A00",
+    "id": 2,
+    "correoElectronico": "af.daza@uniandes.edu.co"
+  },
+  {
+    "usuario": "rj.gonzalez10",
+    "contrasenia": "R00",
+    "id": 3,
+    "correoElectronico": "rj.gonzalez10a@uniandes.edu.co"
+  },
+  {
+    "usuario": "lv.prieto",
+    "contrasenia": "P00",
+    "id": 4,
+    "correoElectronico": "lv.prieto@uniandes.edu.co"
+  }]

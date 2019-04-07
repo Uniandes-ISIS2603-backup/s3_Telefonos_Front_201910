@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Usuario del comprador</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let comprador of compradores"
+                        (click)="onSelected(comprador.id)">
+                        <td style="cursor: pointer;"> 
+                <dd>{{comprador.usuario}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedComprador">
+                <app-comprador-detail [compradorDetail]="selectedComprador"></app-comprador-detail>
+            </div>
+        </div>   
+    </div>
+</div>
