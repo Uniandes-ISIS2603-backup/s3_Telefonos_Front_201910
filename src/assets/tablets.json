@@ -1,0 +1,26 @@
+[
+    {
+        "marca":"Samsung",
+        "modelo":"Galaxy Tab S4",
+        "referencia":"gts4",
+        "registrado":true
+    },
+    {
+        "marca":"Sony",
+        "modelo":"Xperia Z4 Tablet",
+        "referencia":"snyxz4",
+        "registrado":true
+    },
+    {
+        "marca":"Motorola",
+        "modelo":"Xoom",
+        "referencia":"motoxoom",
+        "registrado":true
+    },
+    {
+        "marca":"Apple",
+        "modelo":"Ipad Mini 2",
+        "referencia":"ipm2",
+        "registrado":true
+    }
+]

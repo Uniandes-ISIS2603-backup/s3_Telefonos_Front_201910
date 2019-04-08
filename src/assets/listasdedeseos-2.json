@@ -1,0 +1,32 @@
+{
+    "id":2,
+    "costoEstimado":600000,
+    "tablets":[
+        {
+            "marca":"Motorola",
+            "modelo":"Xoom",
+            "referencia":"motoxoom",
+            "registrado":true
+        },
+        {
+            "marca":"Apple",
+            "modelo":"Ipad Mini 2",
+            "referencia":"ipm2",
+            "registrado":true
+        }
+    ],
+    "celulares":[
+        {
+            "marca":"Motorola",
+            "modelo":"G6",
+            "referencia":"motog6",
+            "registrado":true
+        },
+        {
+            "marca":"Apple",
+            "modelo":"Iphone 6",
+            "referencia":"iph6",
+            "registrado":true
+        }
+    ]
+}

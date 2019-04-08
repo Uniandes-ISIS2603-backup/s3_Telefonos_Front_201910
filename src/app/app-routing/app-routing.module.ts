@@ -5,6 +5,10 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import { TabletListComponent } from '../tablet/tablet-list/tablet-list.component';
+import {TabletDetailComponent} from '../tablet/tablet-detail/tablet-detail.component';
+import { ListadedeseosListComponent } from '../listadedeseos/listadedeseos-list/listadedeseos-list.component';
+import { ListadedeseosDetailComponent } from '../listadedeseos/listadedeseos-detail/listadedeseos-detail.component';
 
 const routes: Routes = [
 
@@ -38,6 +42,30 @@ const routes: Routes = [
         component: AuthLoginComponent
     },
     {
+        path: 'tablets',
+        children:[{
+            path: 'list',
+            component:TabletListComponent
+        },
+        {
+            path:':referencia',
+            component: TabletDetailComponent
+        }
+        ]
+    },
+    {
+        path: 'listasDeDeseos',
+        children:[{
+            path: 'list',
+            component:ListadedeseosListComponent
+        },
+        {
+            path: ':id',
+            component: ListadedeseosDetailComponent
+        }
+        ]
+    },
+    {
         path: '**',
         redirectTo: 'home',
     }
@@ -45,6 +73,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
+
         CommonModule,
         RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
     ],

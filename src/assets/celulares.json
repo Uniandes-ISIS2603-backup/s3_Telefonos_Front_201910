@@ -1,0 +1,26 @@
+[
+    {
+        "marca":"Samsung",
+        "modelo":"S10",
+        "referencia":"smsng10",
+        "registrado":true
+    },
+    {
+        "marca":"Sony",
+        "modelo":"Xperia",
+        "referencia":"snyx",
+        "registrado":true
+    },
+    {
+        "marca":"Motorola",
+        "modelo":"G6",
+        "referencia":"motog6",
+        "registrado":true
+    },
+    {
+        "marca":"Apple",
+        "modelo":"Iphone 6",
+        "referencia":"iph6",
+        "registrado":true
+    }
+]
