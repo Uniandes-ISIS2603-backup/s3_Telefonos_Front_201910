@@ -26,7 +26,7 @@ export class Proveedor {
     /**
      * El raiting del proveedor
      */
-    raiting:number;
+    raiting: number;
 
     /**
      * El nombre del proveedor

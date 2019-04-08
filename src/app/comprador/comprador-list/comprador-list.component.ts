@@ -26,6 +26,11 @@ export class CompradorListComponent implements OnInit {
     compradores: Comprador[];
 
     /**
+    * Shows or hides the author-create-component
+    */
+   showCreate: boolean;
+
+    /**
      * El identificador del comprador seleccionado
      */
     comprador_id: number;
@@ -44,6 +49,17 @@ export class CompradorListComponent implements OnInit {
       this.selectedComprador = new CompradorDetail();
       this.getCompradorDetail();
     }
+
+    /**
+    * Shows or hides the create component
+    */
+   showHideCreate(): void {
+    if (this.selectedComprador) {
+        this.selectedComprador = undefined;
+        this.comprador_id = undefined;
+    }
+    this.showCreate = !this.showCreate;
+}
 
   /**
     * Llama el servicio para actualizar la lista de compradores
@@ -72,6 +88,9 @@ getCompradorDetail(): void {
     * Este metodo va a ser llamado cuando el componente sea creado
     */
   ngOnInit() {
+    this.showCreate = false;
+    this.selectedComprador = undefined;
+    this.comprador_id = undefined;
     this.getCompradores();
   }
 

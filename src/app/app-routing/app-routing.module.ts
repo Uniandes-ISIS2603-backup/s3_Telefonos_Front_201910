@@ -7,6 +7,7 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { CompradorListComponent } from '../comprador/comprador-list/comprador-list.component';
 import { ProveedorListComponent } from '../proveeedor/proveedor-list/proveedor-list.component';
+import { CompradorCreateComponent } from '../comprador/comprador-create/comprador-create.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,11 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CompradorListComponent
+            },
+            {
+                path: 'add',
+                component: CompradorCreateComponent,
+                runGuardsAndResolvers: 'always'
             }
         ]
     },

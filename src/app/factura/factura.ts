@@ -1,3 +1,6 @@
+import { Comprador } from "../comprador/comprador";
+import { Proveedor } from "../proveeedor/proveedor";
+
 export class Factura {
     /**
      * La referencia de la factura
@@ -10,14 +13,14 @@ export class Factura {
     fecha:any;
 
     /**
-     * Usuario comprador
+     * Comprador asociado
      */
-    comprador:String;
+    comprador:Comprador;
 
     /**
-     * Usuario proveedor
+     * Proveedor asociado
      */
-    proveedor:String;
+    proveedor:Proveedor;
 
     /**
      * Identificador publicacion

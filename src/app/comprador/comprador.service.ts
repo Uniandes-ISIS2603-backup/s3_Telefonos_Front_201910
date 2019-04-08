@@ -37,6 +37,10 @@ export class CompradorService {
     */
    getCompradorDetail(compradorId): Observable<CompradorDetail> {
     return this.http.get<CompradorDetail>(`${API_URL}${compradores}/${compradorId}`);
-}
+  }
+
+  createComprador(comprador):Observable<Comprador>{
+    return this.http.post<Comprador>(API_URL+compradores, comprador);
+  }
 
 }
