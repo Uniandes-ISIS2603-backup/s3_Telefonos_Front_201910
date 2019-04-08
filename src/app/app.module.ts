@@ -14,6 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { CompradorModule } from './comprador/comprador.module';
+import { ProveeedorModule } from './proveeedor/proveeedor.module';
 
 
 
@@ -31,6 +32,7 @@ import { CompradorModule } from './comprador/comprador.module';
         HttpClientModule,
         BrowserAnimationsModule,
         CompradorModule,
+        ProveeedorModule,
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,

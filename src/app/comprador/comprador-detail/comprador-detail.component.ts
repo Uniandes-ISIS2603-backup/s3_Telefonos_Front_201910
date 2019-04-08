@@ -11,10 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 export class CompradorDetailComponent implements OnInit {
 
   /**
-    * El comprador
+    * El comprador seleccionado en la lista
     */
    @Input() compradorDetail: CompradorDetail;
 
+   /**
+    * El constructor del componente
+    * @param route Activador de las rutas
+    * @param compradorService Servicio del comprador para desplegar el detail
+    */
   constructor(
     private route: ActivatedRoute,
     private compradorService: CompradorService

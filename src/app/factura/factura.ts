@@ -8,4 +8,19 @@ export class Factura {
      * La fecha de creacion de la factura
      */
     fecha:any;
+
+    /**
+     * Usuario comprador
+     */
+    comprador:String;
+
+    /**
+     * Usuario proveedor
+     */
+    proveedor:String;
+
+    /**
+     * Identificador publicacion
+     */
+    publicacion:String;
 }

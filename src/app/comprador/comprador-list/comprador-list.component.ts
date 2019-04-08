@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Comprador } from '../comprador';
 import { CompradorService } from '../comprador.service';
 import { CompradorDetail } from '../comprador-detail';
-import { LoadedRouterConfig } from '@angular/router/src/config';
 
 /**
  * El componente para listar compradores en CambiaPhone
@@ -21,11 +20,19 @@ export class CompradorListComponent implements OnInit {
     */
   constructor(private compradorService: CompradorService) { }
 
-  /**
+    /**
     * La lista de compradores que pertenecen a CambiaPhone
     */
     compradores: Comprador[];
+
+    /**
+     * El identificador del comprador seleccionado
+     */
     comprador_id: number;
+
+    /**
+     * El comprador seleccionado
+     */
     selectedComprador : Comprador; 
     
     /**
@@ -48,6 +55,9 @@ export class CompradorListComponent implements OnInit {
         });
 }
 
+/**
+ * Llama el servicio para obtener el detalle del comprador seleccionado
+ */
 getCompradorDetail(): void {
   this.compradorService.getCompradorDetail(this.comprador_id)
       .subscribe(selectedComprador => {

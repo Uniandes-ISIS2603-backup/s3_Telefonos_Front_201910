@@ -6,9 +6,8 @@ import { Comprador } from './comprador';
 import { CompradorDetail } from './comprador-detail';
 
 import { environment } from '../../environments/environment';
-const API_URL = "../../assets/";
-const compradores = 'compradores.json';
-const comprador = 'comprador-'
+const API_URL = environment.apiURL;
+const compradores = '/compradores';
 
 /**
 * Servicio proveedor de todo lo relacionado con compradores
@@ -29,15 +28,15 @@ export class CompradorService {
     * @returns La lista de compradores en tiempo real 
     */
    getCompradores(): Observable<Comprador[]> {
-    return this.http.get<Comprador[]>(API_URL + compradores);
+    return this.http.get<Comprador[]>(API_URL+compradores);
   }
 
   /**
-    * Retorna el objeto observanle con los detalles de un autor obtenido del API
+    * Retorna el objeto observable con los detalles de un comprador obtenido del API
     * @returns Los detalles del comprador
     */
    getCompradorDetail(compradorId): Observable<CompradorDetail> {
-    return this.http.get<CompradorDetail>(API_URL+comprador+compradorId+'.json');
+    return this.http.get<CompradorDetail>(`${API_URL}${compradores}/${compradorId}`);
 }
 
 }
