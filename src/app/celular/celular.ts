@@ -25,6 +25,14 @@ export class Celular {
      */
     registrado: boolean;
 
+    /**
+     * Constructor default del celular
+     * @param marca, marca del celular
+     * @param modelo, modelo del celular
+     * @param referencia, referencia del celular
+     * @param registrado, si el celular se encuentra registrado o no
+     * @param imei, el imei del celular 
+     */
     constructor(marca: string, modelo: string, referencia: string, registrado: boolean, imei:string){
         this.marca = marca;
         this.modelo = modelo;

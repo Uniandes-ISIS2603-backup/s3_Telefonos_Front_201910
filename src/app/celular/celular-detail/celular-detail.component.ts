@@ -9,26 +9,44 @@ import { CelularService } from '../celular.service';
   styleUrls: ['./celular-detail.component.css']
 })
 export class CelularDetailComponent implements OnInit {
-
-  constructor(private tabletServide:CelularService,
+  /**
+   * 
+   * @param celularService, conexion al servicio para los métodos http 
+   * @param route 
+   */
+  constructor(private celularService:CelularService,
               private route: ActivatedRoute) { }
-
+  /**
+   * Detalle del celular
+   */
   celularDetail:CelularDetail;
-
+  
+  /**
+   * imei del celular
+   */
   celular_imei: string;
 
+  /**
+   * LOADER
+   */
   loader: any;
 
+  /**
+   * Metodo que retorna el detalle del celular obtenido en la invocaion http
+   */
   getCelularDetail():void{
-    this.tabletServide.getCelularDetail(this.celular_imei).subscribe(celularDetail=>{this.celularDetail =celularDetail});
+    this.celularService.getCelularDetail(this.celular_imei).subscribe(celularDetail=>{this.celularDetail =celularDetail});
   }
+
   onLoad(params){
     this.celular_imei = params['imei'];
     console.log(" en detail " + this.celular_imei);
     this.celularDetail = new CelularDetail(null, null, null, null,null);
     this.getCelularDetail();
   }
-
+  /**
+   * Metodo que se ejecuta al iniciar
+   */
   ngOnInit() {
     this.loader = this.route.params.subscribe((params:Params) => this.onLoad(params));
   }
