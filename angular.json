@@ -21,10 +21,10 @@
                             "src/favicon.ico"
                         ],
                         "styles": [
-                            "node_modules/ngx-toastr/toastr.css",
+                            "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "node_modules/font-awesome/css/font-awesome.css",
-                            "src/styles.css"
+                            "node_modules/ngx-toastr/toastr.css",
+                            "node_modules/font-awesome/css/font-awesome.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.slim.min.js",
@@ -76,10 +76,16 @@
                         "karmaConfig": "./karma.conf.js",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "src/tsconfig.spec.json",
-                        "scripts": [],
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.slim.min.js",
+                            "node_modules/popper.js/dist/umd/popper.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
+                        ],
                         "styles": [
+                            "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "src/styles.css"
+                            "node_modules/ngx-toastr/toastr.css",
+                            "node_modules/font-awesome/css/font-awesome.css"
                         ],
                         "assets": [
                             "src/assets",

@@ -1,48 +1,44 @@
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <br>
-        <h2 class="text-center">Crear una factura</h2>
-        <br>
-        <form name="comprador" (ngSubmit)="f.form.valid && createComprador()" #f="ngForm" novalidate>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Crear una factura</h2>
+            <br>
+            <form name="factura" (ngSubmit)="f.form.valid && createFactura()" #f="ngForm" novalidate>
+                
                 <div class="form-group">
-                        <label for="compradorNickname"><b>Nickname</b></label>
-                        <input type="text" name="compradorNickname" class="form-control" id="compradorNickname" [(ngModel)]="comprador.apodo"
-                            #compradorNickname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compradorNickname.invalid }" required>
-                        <div class="invalid-feedback">
-                            <div>Falta nickname del comprador</div>
-                        </div>
+                    <label for="compradorFactura"><b>Comprador</b></label>
+                    <select class="custom-select" name="compradorFactura" id="compradorFactura" [(ngModel)]="factura.comprador.id"
+                        #compradorFactura="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compradorFactura.invalid }"
+                        required>
+                        <option [value]="comprador.id" *ngFor="let comprador of compradores">{{comprador.usuario}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta el comprador de la factura </div>
                     </div>
-            <div class="form-group">
-                <label for="compradorUser"><b>Usuario</b></label>
-                <input type="text" name="compradorUser" class="form-control" id="compradorUser" [(ngModel)]="comprador.usuario"
-                    #compradorUser="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compradorUser.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Falta usuario del comprador</div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="compradorPassword"><b>Contraseña</b></label>
-                <input type="password" name="compradorPassword" class="form-control" id="compradorPassword" [(ngModel)]="comprador.contrasenia"
-                    #compradorPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compradorPassword.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Falta contraseña del comprador</div>
+                <br>
+                <div class="form-group">
+                    <label for="proveedorFactura"><b>Proveedor</b></label>
+                    <select class="custom-select" name="proveedorFactura" id="proveedorFactura" [(ngModel)]="factura.proveedor.id"
+                        #proveedorFactura="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proveedorFactura.invalid }"
+                        required>
+                        <option [value]="proveedor.id" *ngFor="let proveedor of proveedores">{{proveedor.usuario}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta el proveedor de la factura </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="compradorEmail"><b>Correo Electrónico</b></label>
-                <input type="text" name="compradorEmail" class="form-control" id="compradorEmail" [(ngModel)]="comprador.correoElectronico"
-                    #compradorEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compradorEmail.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Falta correo del comprador</div>
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
                 </div>
-            </div>
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
-            </div>
-        </form>
+            </form>
+            <br>
+        </div>
     </div>
-    <div class="col-3"></div>
 </div>
+<br>
+<br>

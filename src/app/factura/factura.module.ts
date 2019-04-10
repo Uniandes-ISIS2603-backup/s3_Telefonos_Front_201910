@@ -6,12 +6,14 @@ import { FacturaDetailComponent } from './factura-detail/factura-detail.componen
 import { FormsModule } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { FacturaCreateComponent } from './factura-create/factura-create.component';
+import { CompradorModule } from '../comprador/comprador.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    NgxPermissionsModule
+    NgxPermissionsModule,
+    CompradorModule
   ],
   declarations: [FacturaListComponent, FacturaDetailComponent, FacturaCreateComponent],
   providers: [FacturaService],

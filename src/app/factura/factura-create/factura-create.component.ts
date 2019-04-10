@@ -2,6 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FacturaService } from '../factura.service';
 import { ToastrService } from 'ngx-toastr';
 import { Factura } from '../factura';
+import { Comprador } from '../../comprador/comprador';
+import { CompradorService } from '../../comprador/comprador.service';
+import { ProveedorService } from '../../proveeedor/proveedor.service';
+import { Proveedor } from '../../proveeedor/proveedor';
 
 @Component({
   selector: 'app-factura-create',
@@ -17,10 +21,25 @@ export class FacturaCreateComponent implements OnInit {
    */
   constructor(
     private facturaService: FacturaService,
+    private compradorService: CompradorService,
+    private proveedorService: ProveedorService,
     private toastrService: ToastrService
   ) { }
 
+  /** 
+   * Nueva factura
+   */
   factura: Factura;
+
+  /**
+    * Lista de compradores en CambiaPhone
+    */
+   compradores: Comprador[];
+
+   /**
+    * Lista de proveedores en CambiaPhone
+    */
+   proveedores: Proveedor[];
 
 
   /**
@@ -60,10 +79,39 @@ export class FacturaCreateComponent implements OnInit {
     }
 
     /**
+    * Obtiene la lista de compradores de CambiaPhone
+    */
+   getCompradores(): void {
+    this.compradorService.getCompradores()
+        .subscribe(compradores => {
+            this.compradores = compradores;
+        }, err => {
+            this.toastrService.error(err, 'Error');
+        });
+}
+
+/**
+    * Obtiene la lista de proveedores de CambiaPhone
+    */
+   getProveedores(): void {
+    this.proveedorService.getProveedores()
+        .subscribe(proveedores => {
+            this.proveedores = proveedores;
+        }, err => {
+            this.toastrService.error(err, 'Error');
+        });
+}
+
+
+    /**
     * La funcion que inicializa el componente
     */
     ngOnInit() {
         this.factura = new Factura ();
+        this.factura.comprador = new Comprador();
+        this.factura.proveedor = new Proveedor();
+        this.getCompradores();
+        this.getProveedores();
     }
 
 } 
