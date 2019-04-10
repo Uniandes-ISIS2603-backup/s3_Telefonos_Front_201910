@@ -5,13 +5,21 @@ import { CompradorService } from './comprador.service';
 import { CompradorDetailComponent } from './comprador-detail/comprador-detail.component';
 import { CompradorCreateComponent } from './comprador-create/comprador-create.component';
 import { FormsModule } from '@angular/forms';
-import { NgxPermissionsModule } from 'ngx-permissions';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxPermissionsModule
+    NgbModule
   ],
   declarations: [CompradorListComponent, CompradorDetailComponent, CompradorCreateComponent],
   providers: [CompradorService],

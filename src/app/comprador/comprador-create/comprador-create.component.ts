@@ -10,6 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CompradorCreateComponent implements OnInit {
 
+  /**
+   * El constructor del componente
+   * @param compradorService Proveedor del servicio de comprador
+   * @param toastrService El toastr para mostrar mensajes al usuario
+   */
   constructor(
     private compradorService: CompradorService,
     private toastrService: ToastrService
@@ -19,14 +24,14 @@ export class CompradorCreateComponent implements OnInit {
 
 
   /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an author
+    * La salida que le indica al componente padre
+    * que el usuario no quiere crear un comprador
     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new author
+    * La salida que le indica al componente padre
+    * que el usuario quiere crear un comprador
     */
     @Output() create = new EventEmitter();
 
@@ -40,26 +45,25 @@ export class CompradorCreateComponent implements OnInit {
         this.compradorService.createComprador(this.comprador).subscribe((comprador) => {
                 this.comprador = comprador;
                 this.create.emit();
-                this.toastrService.success("El comprador fue creado", "Creacion comprador");
+                this.toastrService.success("El comprador fue creado", "Comprador creation");
                 
             });
             return this.comprador;
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * Emite la senial para indicar al componente padre que
+    *el usuario no quiere crear un comprador
     */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
     /**
-    * This function will initialize the component
+    * La funcion que inicializa el componente
     */
     ngOnInit() {
-        this.comprador = new Comprador
-        ();
+        this.comprador = new Comprador ();
     }
 
 }

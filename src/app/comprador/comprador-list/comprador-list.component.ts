@@ -51,7 +51,7 @@ export class CompradorListComponent implements OnInit {
     }
 
     /**
-    * Shows or hides the create component
+    * Muetsra o esconde el componente de crear
     */
    showHideCreate(): void {
     if (this.selectedComprador) {
@@ -88,7 +88,6 @@ getCompradorDetail(): void {
     * Este metodo va a ser llamado cuando el componente sea creado
     */
   ngOnInit() {
-    console.log("Hola, si se despliega esto -- Comprador");
     this.showCreate = false;
     this.selectedComprador = undefined;
     this.comprador_id = undefined;

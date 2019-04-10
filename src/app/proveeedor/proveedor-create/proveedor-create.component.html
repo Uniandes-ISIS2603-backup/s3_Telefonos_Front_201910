@@ -1,3 +1,48 @@
-<p>
-  proveedor-create works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear un proveedor</h2>
+        <br>
+        <form name="proveedor" (ngSubmit)="f.form.valid && createProveedor()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="proveedorName"><b>Nombre</b></label>
+                <input type="text" name="proveedorName" class="form-control" id="proveedorName" [(ngModel)]="proveedor.nombre"
+                    #proveedorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proveedorName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta nombre del proveedor</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proveedorUser"><b>Usuario</b></label>
+                <input type="text" name="proveedorUser" class="form-control" id="proveedorUser" [(ngModel)]="proveedor.usuario"
+                    #proveedorUser="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proveedorUser.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta usuario del proveedor</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proveedorPassword"><b>Contraseña</b></label>
+                <input type="password" name="proveedorPassword" class="form-control" id="proveedorPassword" [(ngModel)]="proveedor.contrasenia"
+                    #proveedorPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proveedorPassword.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta contraseña del proveedor</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proveedorEmail"><b>Correo Electrónico</b></label>
+                <input type="text" name="proveedorEmail" class="form-control" id="proveedorEmail" [(ngModel)]="proveedor.correoElectronico"
+                    #proveedorEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proveedorEmail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta correo del proveedor</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div> 
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

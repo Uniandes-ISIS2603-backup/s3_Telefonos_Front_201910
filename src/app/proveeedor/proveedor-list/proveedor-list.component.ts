@@ -31,6 +31,10 @@ export class ProveedorListComponent implements OnInit {
      */
     selectedProveedor : ProveedorDetail;  
 
+    /**
+    * Muestra o esconde proveedor-create-component 
+    */
+   showCreate: boolean;
 
   /**
      * Indica cual es el proveedor seleccionado
@@ -41,6 +45,17 @@ export class ProveedorListComponent implements OnInit {
       this.selectedProveedor = new ProveedorDetail();
       this.getProveedorDetail();
     }
+
+     /**
+    * Muetsra o esconde el componente de crear
+    */
+   showHideCreate(): void {
+    if (this.selectedProveedor) {
+        this.selectedProveedor = undefined;
+        this.proveedor_id = undefined;
+    }
+    this.showCreate = !this.showCreate;
+}
 
   /**
     * Llama el servicio para actualizar la lista de proveedores
@@ -69,6 +84,9 @@ getProveedorDetail(): void {
     * Este metodo va a ser llamado cuando el componente sea creado
     */
   ngOnInit() {
+    this.showCreate = false;
+    this.selectedProveedor = undefined;
+    this.proveedor_id = undefined;
     this.getProveedores();
   }
 

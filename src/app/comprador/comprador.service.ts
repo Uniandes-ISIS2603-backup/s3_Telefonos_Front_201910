@@ -46,6 +46,6 @@ export class CompradorService {
     */
   createComprador(comprador):Observable<Comprador>{
     return this.http.post<Comprador>(API_URL+compradores, comprador);
-  } 
+  }  
 
 }

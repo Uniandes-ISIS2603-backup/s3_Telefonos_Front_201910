@@ -5,6 +5,7 @@ import { FacturaService } from './factura.service';
 import { FacturaDetailComponent } from './factura-detail/factura-detail.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { FacturaCreateComponent } from './factura-create/factura-create.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     FormsModule,
     NgxPermissionsModule
   ],
-  declarations: [FacturaListComponent, FacturaDetailComponent],
+  declarations: [FacturaListComponent, FacturaDetailComponent, FacturaCreateComponent],
   providers: [FacturaService],
   exports:[FacturaListComponent]
 })

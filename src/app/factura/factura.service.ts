@@ -36,4 +36,13 @@ export class FacturaService {
    getFacturaDetail(facturaId): Observable<Factura> {
     return this.http.get<Factura>(`${API_URL}${facturas}/${facturaId}`);
    }
+
+  /**
+    * Crea una factura
+    * @param factura La nueva factura
+    * @returns La confirmacion de que la factura fue creada
+    */
+   createFactura(factura):Observable<Factura>{
+    return this.http.post<Factura>(API_URL+facturas, factura);
+  }  
 }

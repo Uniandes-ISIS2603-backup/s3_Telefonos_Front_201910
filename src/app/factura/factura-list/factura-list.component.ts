@@ -31,6 +31,11 @@ export class FacturaListComponent implements OnInit {
     selectedFactura : Factura;
 
     /**
+    * Muestra o esconde factura-create-component 
+    */
+   showCreate: boolean;
+
+    /**
      * Indica cual es la factura seleccionada
      * @param factura_id Identificador de la factura seleccionada
      */
@@ -39,6 +44,17 @@ export class FacturaListComponent implements OnInit {
       this.selectedFactura = new Factura();
       this.getFacturaDetail();
     }
+
+    /**
+    * Muetsra o esconde el componente de crear
+    */
+   showHideCreate(): void {
+    if (this.selectedFactura) {
+        this.selectedFactura = undefined;
+        this.factura_id = undefined;
+    }
+    this.showCreate = !this.showCreate;
+}
 
     /**
     * Llama el servicio para actualizar la lista de facturas
@@ -66,8 +82,8 @@ getFacturaDetail(): void {
     * Este metodo va a inicializar el componente obteniendo la lista de facturas del servicio
     * Este metodo va a ser llamado cuando el componente sea creado
     */
-  ngOnInit() {
-    console.log("Hola, si se despliega esto");
+   ngOnInit() {
+    this.showCreate = false;
     this.selectedFactura = undefined;
     this.factura_id = undefined;
     this.getFacturas();
