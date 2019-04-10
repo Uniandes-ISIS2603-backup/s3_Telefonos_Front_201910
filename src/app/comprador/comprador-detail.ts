@@ -8,5 +8,9 @@ export class CompradorDetail extends Comprador {
     /**
      * Facturas asociadas al comprador
      */
-    facturas: Factura[];
+    facturasDeCompra: Factura[];
+
+    /**
+     * Metodos de pago asociados al comprador
+     */
 }

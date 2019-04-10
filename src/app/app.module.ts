@@ -15,11 +15,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { CompradorModule } from './comprador/comprador.module';
 import { ProveeedorModule } from './proveeedor/proveeedor.module';
-
-
-
-
-
+import { FacturaModule } from './factura/factura.module';
 
 
 @NgModule({
@@ -33,6 +29,7 @@ import { ProveeedorModule } from './proveeedor/proveeedor.module';
         BrowserAnimationsModule,
         CompradorModule,
         ProveeedorModule,
+        FacturaModule,
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,

@@ -1,29 +1,40 @@
 import { Comprador } from "../comprador/comprador";
 import { Proveedor } from "../proveeedor/proveedor";
 
+/**
+ * Esta clase representa una factura de CambiaPhone. 
+ * Contiene toda la informacion relevante de una factura.
+ */
 export class Factura {
-    /**
-     * La referencia de la factura
-     */
-    referencia: String;
 
     /**
-     * La fecha de creacion de la factura
+     * Fecha de creacion de la factura
      */
-    fecha:any;
+    fecha: any;
 
     /**
-     * Comprador asociado
+     * Identificador de la factura
      */
-    comprador:Comprador;
+    id: number;
 
     /**
-     * Proveedor asociado
+     * Referencia de la factura
      */
-    proveedor:Proveedor;
+    referencia:String;
 
     /**
-     * Identificador publicacion
+     * Comprador asociado a la factura
      */
-    publicacion:String;
+    comprador: Comprador;
+
+    /**
+     * Proveedor asociado a la factura
+     */
+    proveedor: Proveedor;
+
+    /**
+     * Publicación asociada a la factura
+     */
+    publicacion: String; 
+    
 }

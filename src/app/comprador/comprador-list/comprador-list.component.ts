@@ -16,7 +16,7 @@ export class CompradorListComponent implements OnInit {
 
   /**
     * Constructor para el componente
-    * @param compradorService El proveedor del servicio Comprador
+    * @param compradorService El proveedor del servicio Comprador 
     */
   constructor(private compradorService: CompradorService) { }
 
@@ -26,7 +26,7 @@ export class CompradorListComponent implements OnInit {
     compradores: Comprador[];
 
     /**
-    * Shows or hides the author-create-component
+    * Muestra o esconde comprador-create-component 
     */
    showCreate: boolean;
 
@@ -88,6 +88,7 @@ getCompradorDetail(): void {
     * Este metodo va a ser llamado cuando el componente sea creado
     */
   ngOnInit() {
+    console.log("Hola, si se despliega esto -- Comprador");
     this.showCreate = false;
     this.selectedComprador = undefined;
     this.comprador_id = undefined;
