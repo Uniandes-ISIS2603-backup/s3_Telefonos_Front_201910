@@ -3,31 +3,31 @@
         <div class="col">
                 <div class="row justify-content-center align-self-center">
                         <button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                            (click)="showHideCreate()">Crear un comprador</button>
+                            (click)="showHideCreate()">Crear un publicacion</button>
                     </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="h4">Usuario del comprador</th> 
+                        <th class="h4">Usuario del publicacion</th> 
                     </tr>
                     
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let comprador of compradores"
-                        (click)="onSelected(comprador.id)">
+                    <tr *ngFor = "let publicacion of publicaciones"
+                        (click)="onSelected(publicacion.id)">
                         <td style="cursor: pointer;"> 
-                <dd>{{comprador.usuario}}</dd>
+                <dd>{{publicacion.usuario}}</dd>
                 </td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-8">
-            <div *ngIf="selectedComprador">
-                <app-comprador-detail [compradorDetail]="selectedComprador"></app-comprador-detail>
+            <div *ngIf="selectedPublicacion">
+                <app-publicacion-detail [publicacionDetail]="selectedPublicacion"></app-publicacion-detail>
             </div>
             <div *ngIf="showCreate">
-                    <app-comprador-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comprador-create>
+                    <app-publicacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-publicacion-create>
             </div>
         </div>   
     </div>

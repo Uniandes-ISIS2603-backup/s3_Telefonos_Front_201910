@@ -36,7 +36,7 @@ export class PublicacionListComponent implements OnInit {
     publicacion_id: number;
 
     /**
-     * El publicacion seleccionado
+     * La publicacion seleccionado
      */
     selectedPublicacion : Publicacion; 
     
