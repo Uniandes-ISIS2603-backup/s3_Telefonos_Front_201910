@@ -13,6 +13,8 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { CelularModule } from './celular/celular.module';
+import { CarritoDeComprasModule } from './carrito-de-compras/carrito-de-compras.module';
 
 
 
@@ -24,6 +26,8 @@ import {AuthModule} from './auth/auth.module';
         AppComponent
     ],
     imports: [
+        CelularModule,
+        CarritoDeComprasModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,

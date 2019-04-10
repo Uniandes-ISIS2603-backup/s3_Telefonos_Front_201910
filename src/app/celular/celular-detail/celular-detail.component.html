@@ -1,3 +1,12 @@
-<p>
-  celular-detail works!
-</p>
+<div class="container-fluid">
+    <h2>Tablet {{celularDetail.marca}} {{celularDetail.modelo}} </h2>
+    <p>Referencia: {{celularDetail.referencia}}</p>
+    <p  *ngIf="CelularDetail.registrado; else noRegistrada">
+      Imei: {{celularDetail.imei}}
+      Registrada: Si
+    </p>
+    <ng-template #noRegistrada>
+      <p>Registrada: No</p>
+    </ng-template>
+    
+  </div>

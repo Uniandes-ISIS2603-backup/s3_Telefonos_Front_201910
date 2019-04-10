@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CelularService } from '../celular.service';
+import { Celular } from '../celular';
 
 @Component({
   selector: 'app-celular-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CelularListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private celularService: CelularService) { }
+  @Input() celulares: Celular[];
+
+  getCelulares(): void{
+    this.celularService.getCelulares().subscribe(theCelulars => this.celulares = theCelulars);
+  }
 
   ngOnInit() {
+    this.getCelulares();
   }
+
+
 
 }
