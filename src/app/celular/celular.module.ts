@@ -6,10 +6,17 @@ import { CelularCreateComponent } from './celular-create/celular-create.componen
 import { CelularUpdateComponent } from './celular-update/celular-update.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CelularService } from './celular.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
-    CommonModule, AppRoutingModule
+    BrowserModule,
+    CommonModule, 
+    AppRoutingModule, 
+    FormsModule,
+    NgbModule
   ],
   declarations: [CelularListComponent, CelularDetailComponent, CelularCreateComponent, CelularUpdateComponent],
   exports: [CelularListComponent, CelularDetailComponent, CelularCreateComponent, CelularUpdateComponent],

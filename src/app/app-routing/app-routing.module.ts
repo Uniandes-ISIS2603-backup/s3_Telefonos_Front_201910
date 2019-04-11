@@ -9,13 +9,21 @@ import { CelularListComponent } from '../celular/celular-list/celular-list.compo
 import { CelularDetailComponent } from '../celular/celular-detail/celular-detail.component';
 import { CarritoDeComprasListComponent } from '../carrito-de-compras/carrito-de-compras-list/carrito-de-compras-list.component';
 import { CarritoDeComprasDetailComponent } from '../carrito-de-compras/carrito-de-compras-detail/carrito-de-compras-detail.component';
+import { CelularCreateComponent } from '../celular/celular-create/celular-create.component';
+import { CarritoDeComprasCreateComponent } from '../carrito-de-compras/carrito-de-compras-create/carrito-de-compras-create.component';
 
 const routes: Routes = [
 
     
     {
         path: 'celulares',
-        children:[{
+        children:[
+            {
+                path: 'add',
+                component: CelularCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
             path: 'list',
             component: CelularListComponent
         },
@@ -30,6 +38,11 @@ const routes: Routes = [
         children:[{
             path: 'list',
             component:CarritoDeComprasListComponent
+        },
+        {
+            path: 'add',
+            component:CarritoDeComprasCreateComponent,
+            runGuardsAndResolvers: 'always'
         },
         {
             path: ':id',

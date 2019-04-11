@@ -1,3 +1,53 @@
-<p>
-  celular-create works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Add a new book</h2>
+            <br>
+            <form name="book" (ngSubmit)="f.form.valid && createCelular()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="celularMarca"><b>Marca</b></label>
+                    <input type="text" name="celularMarca" class="form-control" id="celularMarca" [(ngModel)]="celular.marca"
+                        #celularMarca="ngModel" [ngClass]="{ 'is-invalid': f.submitted && celularMarca.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta la marca del celular</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="celularModelo"><b>Modelo</b></label>
+                    <textarea name="celularModelo" class="form-control" id="celularModelo" [(ngModel)]="celular.modelo"
+                        #celularModelo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && celularModelo.invalid }"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        <div>Falta el modelo del celular</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="celularReferencia"><b>Referencia</b></label>
+                    <input type="text" name="celularReferencia" class="form-control" id="celularReferencia" [(ngModel)]="celular.referencia"
+                        #celularReferencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && celularReferencia.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta la referencia del celular</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="celularImei"><b>Imei</b></label>
+                    <input type="text" name="celularImei" class="form-control" id="celularImei" [(ngModel)]="celular.imei"
+                        #celularImei="ngModel" [ngClass]="{ 'is-invalid': f.submitted && celularImei.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta el imei del celular</div>
+                    </div>
+                </div>
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>

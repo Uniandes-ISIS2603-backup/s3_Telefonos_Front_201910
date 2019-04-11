@@ -10,8 +10,8 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
   imports: [
     CommonModule,AppRoutingModule
   ],
-  declarations: [CarritoDeComprasListComponent, CarritoDeComprasDetailComponent],
+  declarations: [CarritoDeComprasListComponent, CarritoDeComprasDetailComponent, CarritoDeComprasCreateComponent],
   providers:[CarritoDeComprasService],
-  exports:[CarritoDeComprasListComponent, CarritoDeComprasDetailComponent]
+  exports:[CarritoDeComprasListComponent, CarritoDeComprasDetailComponent, CarritoDeComprasCreateComponent]
 })
 export class CarritoDeComprasModule { }

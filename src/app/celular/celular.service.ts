@@ -29,4 +29,14 @@ export class CelularService{
     getCelularDetail(imei:number): Observable<CelularDetail>{
         return this.http.get<CelularDetail>(API_URL+'celulares-'+imei+'.json');
     }
+
+    /**
+    * Creates a new Celular
+    * @param celular The new celular
+    * @returns The book with its new id if it was created, false if it wasn't
+    */
+   createCelular(celular): Observable<CelularDetail> {
+    return this.http.post<CelularDetail>(API_URL + celulares, celular);
+}
+
 }
