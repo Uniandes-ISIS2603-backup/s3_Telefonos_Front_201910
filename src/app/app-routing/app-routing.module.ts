@@ -9,6 +9,12 @@ import { CompradorListComponent } from '../comprador/comprador-list/comprador-li
 import { ProveedorListComponent } from '../proveeedor/proveedor-list/proveedor-list.component';
 import { CompradorCreateComponent } from '../comprador/comprador-create/comprador-create.component';
 import { FacturaListComponent } from '../factura/factura-list/factura-list.component';
+import { TabletListComponent } from '../tablet/tablet-list/tablet-list.component';
+import { TabletCrearComponent } from '../tablet/tablet-crear/tablet-crear.component';
+import { TabletDetailComponent } from '../tablet/tablet-detail/tablet-detail.component';
+import { ListadedeseosListComponent } from '../listadedeseos/listadedeseos-list/listadedeseos-list.component';
+import { ListadedeseosCrearComponent } from '../listadedeseos/listadedeseos-crear/listadedeseos-crear.component';
+import { ListadedeseosDetailComponent } from '../listadedeseos/listadedeseos-detail/listadedeseos-detail.component';
 
 const routes: Routes = [
     {
@@ -41,6 +47,38 @@ const routes: Routes = [
                 path: 'list',
                 component: ProveedorListComponent
             }
+        ]
+    },
+    {
+        path: 'tablets',
+        children:[{
+            path: 'list',
+            component:TabletListComponent
+        },
+        {
+            path: 'add',
+            component: TabletCrearComponent,
+            runGuardsAndResolvers: 'always'
+        },{
+            path:':referencia',
+            component: TabletDetailComponent
+        }
+        ]
+    },
+    {
+        path: 'listasDeDeseos',
+        children:[{
+            path: 'list',
+            component:ListadedeseosListComponent
+        },
+        {
+            path: 'add',
+            component: ListadedeseosCrearComponent
+        },
+        {
+            path: ':id',
+            component: ListadedeseosDetailComponent
+        }
         ]
     },
     {

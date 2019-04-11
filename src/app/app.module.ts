@@ -17,6 +17,8 @@ import {AuthModule} from './auth/auth.module';
 import { CompradorModule } from './comprador/comprador.module';
 import { ProveeedorModule } from './proveeedor/proveeedor.module';
 import { FacturaModule } from './factura/factura.module';
+import { TabletModule } from './tablet/tablet.module';
+import { ListadedeseosModule } from './listadedeseos/listadedeseos.module';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { FacturaModule } from './factura/factura.module';
         AppComponent
     ],
     imports: [
+        TabletModule,
+        ListadedeseosModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,

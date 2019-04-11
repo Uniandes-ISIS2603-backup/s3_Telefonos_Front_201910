@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una tablet</h2>
+        <br>
+        <form name="tablet" (ngSubmit)="f.form.valid && createTablet()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="tabletMarca"><b>Marca</b></label>
+                <input type="text" name="tabletMarca" class="form-control" id="tabletMarca" [(ngModel)]="tablet.marca"
+                    #tabletMarca="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tabletMarca.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta marca de la tablet</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tabletModelo"><b>Modelo</b></label>
+                <input type="text" name="tabletModelo" class="form-control" id="tabletModelo" [(ngModel)]="tablet.modelo"
+                    #tabletModelo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tabletModelo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta modelo de la tablet</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tabletReferencia"><b>Referencia</b></label>
+                <input type="text" name="tabletReferencia" class="form-control" id="tabletReferencia" [(ngModel)]="tablet.referencia"
+                    #tabletReferencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tabletReferencia.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta referencia de la tablet</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
