@@ -1,21 +1,21 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CompradorService } from '../comprador.service';
-import { Comprador } from '../comprador';
+import { PublicacionService } from '../publicacion.service';
+import { Publicacion } from '../publicacion';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-comprador-create',
-  templateUrl: './comprador-create.component.html',
-  styleUrls: ['./comprador-create.component.css']
+  selector: 'app-publicacion-create',
+  templateUrl: './publicacion-create.component.html',
+  styleUrls: ['./publicacion-create.component.css']
 })
-export class CompradorCreateComponent implements OnInit {
+export class PublicacionCreateComponent implements OnInit {
 
   constructor(
-    private compradorService: CompradorService,
+    private publicacionService: PublicacionService,
     private toastrService: ToastrService
   ) { }
 
-  comprador: Comprador;
+  publicacion: Publicacion;
 
 
   /**
@@ -31,19 +31,19 @@ export class CompradorCreateComponent implements OnInit {
     @Output() create = new EventEmitter();
 
     /**
-    * Crea un comprador
+    * Crea un publicacion
     */
-    createComprador
-    (): Comprador
+    createPublicacion
+    (): Publicacion
      {
-        console.log(this.comprador);
-        this.compradorService.createComprador(this.comprador).subscribe((comprador) => {
-                this.comprador = comprador;
+        console.log(this.publicacion);
+        this.publicacionService.createPublicacion(this.publicacion).subscribe((publicacion) => {
+                this.publicacion = publicacion;
                 this.create.emit();
-                this.toastrService.success("El comprador fue creado", "Creacion comprador");
+                this.toastrService.success("El publicacion fue creado", "Creacion publicacion");
                 
             });
-            return this.comprador;
+            return this.publicacion;
     }
 
     /**
@@ -58,7 +58,7 @@ export class CompradorCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        this.comprador = new Comprador
+        this.publicacion = new Publicacion
         ();
     }
 

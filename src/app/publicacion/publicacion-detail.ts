@@ -8,5 +8,5 @@ export class PublicacionDetail extends Publicacion {
     /**
      * telefono asociado a la publicacion
      */
-    facturas: Factura[];
+   
 }
