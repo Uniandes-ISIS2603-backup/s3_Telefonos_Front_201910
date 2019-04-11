@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListaDeDeseosDetail } from './listadedeseos-detail';
 
-//const API_URL ='../../assets/';
-//const LISTAS='listasdedeseos.json';
+const API_URL ='../../assets/';
+const LISTAS='listasdedeseos.json';
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
-const listas = '/listasDeDeseos';
+//const API_URL = environment.apiURL;
+//const listas = '/listasDeDeseos';
 
 
 @Injectable({
@@ -20,14 +20,14 @@ export class ListaDeDeseosService {
   constructor (private http: HttpClient){ }
 
     getListasDeDeseos(): Observable<ListaDeDeseos[]>{
-        return this.http.get<ListaDeDeseos[]>(API_URL+listas);
+        return this.http.get<ListaDeDeseos[]>(API_URL+LISTAS);
     }
 
     getListaDeDeseosDetail(idLista): Observable<ListaDeDeseosDetail>{
-      return this.http.get<ListaDeDeseosDetail>(`${API_URL}${listas}/${idLista}`);
+      return this.http.get<ListaDeDeseosDetail>(API_URL+"/listasdedeseos-"+idLista+".json");
     }
 
     createListaDeDeseos(lista):Observable<ListaDeDeseos>{
-      return this.http.post<ListaDeDeseos>(API_URL+listas, lista);
+      return this.http.post<ListaDeDeseos>(API_URL+LISTAS, lista);
   }
 }

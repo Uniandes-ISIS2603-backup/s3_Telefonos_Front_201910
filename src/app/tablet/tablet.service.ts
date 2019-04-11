@@ -4,11 +4,11 @@ import {Tablet} from './tablet';
 import {TabletDetail} from './tablet-detail';
 import {Observable} from 'rxjs';
 
-//const API_URL = "../../assets/";
-//const tablets = 'tablets.json';
+const API_URL = "../../assets/";
+const tablets = 'tablets.json';
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
-const tablets = '/tablets';
+//const API_URL = environment.apiURL;
+//const tablets = '/tablets';
 
 /**
 * Servicio proveedor de todo lo relacionado con tablets
@@ -37,7 +37,7 @@ export class TabletService{
     * @returns Los detalles de la tablet
     */
     getTabletDetail(referenciaTablet): Observable<TabletDetail>{
-        return this.http.get<TabletDetail>(`${API_URL}${tablets}/${referenciaTablet}`);
+        return this.http.get<TabletDetail>(API_URL+"/tablets-"+referenciaTablet+".json");
     }
 
     createTablet(tablet):Observable<Tablet>{
