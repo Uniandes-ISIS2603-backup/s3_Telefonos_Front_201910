@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <h2>Celular: {{celularDetail.marca}} {{celularDetail.modelo}} </h2>
+    <p>Referencia: {{celularDetail.referencia}}</p>
+    <p  *ngIf="celularDetail.registrado; else noRegistrada">
+      Imei: {{celularDetail.imei}}
+      Registrada: Si
+    </p>
+    <ng-template #noRegistrada>
+      <p>Registrada: No</p>
+    </ng-template>
+    
+  </div>

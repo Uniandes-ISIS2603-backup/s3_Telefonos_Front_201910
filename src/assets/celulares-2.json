@@ -1,6 +1,7 @@
 {
     "marca":"Motorola",
     "modelo":"G6",
+    "imei": 2,
     "referencia":"motog6",
     "registrado":true
 }

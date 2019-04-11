@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <table class ="table table-striped">
+      <thead>
+        <tr>
+          <th>Id Carrito de compras</th>
+          <th>Costo</th>
+          <th>Publicaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of carritos">
+          <td>{{c.id}}</td>
+          <td>{{c.costo}}</td>
+          <td><a routerLink="/carritosDeCompras/{{c.id}}">Ver Publicaciones</a></td>          
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/carritoDeCompras/add" class="btn btn-success">Crear carrito</a>
+  </div>

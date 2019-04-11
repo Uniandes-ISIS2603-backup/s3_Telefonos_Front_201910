@@ -19,6 +19,8 @@ import { ProveeedorModule } from './proveeedor/proveeedor.module';
 import { FacturaModule } from './factura/factura.module';
 import { TabletModule } from './tablet/tablet.module';
 import { ListadedeseosModule } from './listadedeseos/listadedeseos.module';
+import { CelularModule } from './celular/celular.module';
+import { CarritoDeComprasModule } from './carrito-de-compras/carrito-de-compras.module';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ListadedeseosModule } from './listadedeseos/listadedeseos.module';
         AppComponent
     ],
     imports: [
+        CelularModule,
+        CarritoDeComprasModule,
         TabletModule,
         ListadedeseosModule,
         BrowserModule,

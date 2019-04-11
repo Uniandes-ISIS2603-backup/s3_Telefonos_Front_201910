@@ -1,6 +1,7 @@
 {
     "marca":"Apple",
     "modelo":"Iphone 6",
+    "imei" : 1,
     "referencia":"iph6",
     "registrado":true
 }

@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <h2>Carrito de compras con id {{listaDetail.id}}:</h2>
+  <h5>Costo:</h5>
+  <p>{{carritoDetail.costo}}</p>
+  <h5>Publicaciones:</h5>
+  <ul>
+    <li *ngFor="let p of carritoDetail.publicaciones"><a routerLink="/publicaciones/{{p.id}}">{{p.celular.marca}}{{p.celular.modelo}}{{p.tablet.marca}}{{p.celular.modelo}}</a></li>
+  </ul>
+</div>
+

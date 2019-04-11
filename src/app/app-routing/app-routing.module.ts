@@ -15,9 +15,50 @@ import { TabletDetailComponent } from '../tablet/tablet-detail/tablet-detail.com
 import { ListadedeseosListComponent } from '../listadedeseos/listadedeseos-list/listadedeseos-list.component';
 import { ListadedeseosCrearComponent } from '../listadedeseos/listadedeseos-crear/listadedeseos-crear.component';
 import { ListadedeseosDetailComponent } from '../listadedeseos/listadedeseos-detail/listadedeseos-detail.component';
+import { CelularCreateComponent } from '../celular/celular-create/celular-create.component';
+import { CelularListComponent } from '../celular/celular-list/celular-list.component';
+import { CelularDetailComponent } from '../celular/celular-detail/celular-detail.component';
+import { CarritoDeComprasCreateComponent } from '../carrito-de-compras/carrito-de-compras-create/carrito-de-compras-create.component';
+import { CarritoDeComprasListComponent } from '../carrito-de-compras/carrito-de-compras-list/carrito-de-compras-list.component';
+import { CarritoDeComprasDetailComponent } from '../carrito-de-compras/carrito-de-compras-detail/carrito-de-compras-detail.component';
 
 const routes: Routes = [
     {
+        path: 'celulares',
+        children:[
+            {
+                path: 'add',
+                component: CelularCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+            path: 'list',
+            component: CelularListComponent
+        },
+        {
+            path:':imei',
+            component: CelularDetailComponent
+        }
+        ]
+    },
+    {
+        path: 'carritoDeCompras',
+        children:[
+        {
+                path: 'add',
+                component:CarritoDeComprasCreateComponent,
+                runGuardsAndResolvers: 'always'
+        },
+        {
+            path: 'list',
+            component:CarritoDeComprasListComponent
+        },
+        {
+            path: ':id',
+            component: CarritoDeComprasDetailComponent
+        }
+        ]
+    },{
         path: 'facturas',
         children: [
             {

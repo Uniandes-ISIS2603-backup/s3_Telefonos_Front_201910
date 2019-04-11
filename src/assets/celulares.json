@@ -2,24 +2,28 @@
     {
         "marca":"Samsung",
         "modelo":"S10",
+        "imei":1,
         "referencia":"smsng10",
         "registrado":true
     },
     {
         "marca":"Sony",
         "modelo":"Xperia",
+        "imei":2,
         "referencia":"snyx",
         "registrado":true
     },
     {
         "marca":"Motorola",
         "modelo":"G6",
+        "imei":3,
         "referencia":"motog6",
         "registrado":true
     },
     {
         "marca":"Apple",
         "modelo":"Iphone 6",
+        "imei":4,
         "referencia":"iph6",
         "registrado":true
     }

@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label for="listaCosto"><b>Costo Estimado</b></label>
                 <input type="text" name="listaCosto" class="form-control" id="listaCosto" [(ngModel)]="lista.costoEstimado"
-                    #tabletMarca="ngModel" [ngClass]="{ 'is-invalid': f.submitted && listaCosto.invalid }" required>
+                    #listaCosto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && listaCosto.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Falta el costo estimado de la lista</div>
                 </div>

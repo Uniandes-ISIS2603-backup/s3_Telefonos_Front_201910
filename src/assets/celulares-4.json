@@ -1,6 +1,7 @@
 {
     "marca":"Sony",
     "modelo":"Xperia",
+    "imei":4,
     "referencia":"snyx",
     "registrado":true
 }

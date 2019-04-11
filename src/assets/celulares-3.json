@@ -1,6 +1,7 @@
 {
     "marca":"Samsung",
     "modelo":"S10",
+    "imei": 3,
     "referencia":"smsng10",
     "registrado":true
 }
