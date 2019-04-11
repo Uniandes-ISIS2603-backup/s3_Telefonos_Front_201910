@@ -5,10 +5,11 @@ import { CarritoDeComprasDetailComponent } from './carrito-de-compras-detail/car
 import { CarritoDeComprasCreateComponent } from './carrito-de-compras-create/carrito-de-compras-create.component';
 import { CarritoDeComprasService } from './carrito-de-compras.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule,AppRoutingModule
+    CommonModule,AppRoutingModule, FormsModule
   ],
   declarations: [CarritoDeComprasListComponent, CarritoDeComprasDetailComponent, CarritoDeComprasCreateComponent],
   providers:[CarritoDeComprasService],

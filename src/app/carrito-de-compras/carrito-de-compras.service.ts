@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 const API_URL ='../../assets/';
-const CARROS='carritoDeCompras.json';
+const CARROS='carritosDeCompras.json';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,4 +31,13 @@ export class CarritoDeComprasService {
   getCarritoDeComprasDetail(idCarro:number): Observable<CarritoDeComprasDetail>{
     return this.http.get<CarritoDeComprasDetail>(API_URL+'carritoDeCompras-'+idCarro+'.json');
   }
+
+   /**
+    * Creates a new carrito de compras
+    * @param carrito The new carrito de compras
+    * @returns The carrito de compras with its new id if it was created, false if it wasn't
+    */
+   createCarrito(carrito): Observable<CarritoDeComprasDetail> {
+    return this.http.post<CarritoDeComprasDetail>(API_URL + CARROS, carrito);
+}
 }

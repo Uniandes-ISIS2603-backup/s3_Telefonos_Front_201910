@@ -1,1 +1,37 @@
-<p>hola mundo</p>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <h2 class="text-center">Crea un nuevo carrito de compras</h2>
+                <br>
+                <form name="carrito" (ngSubmit)="f.form.valid && createCarrito()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="carritoCosto"><b>Costo Total</b></label>
+                        <input type="text" name="carritoCosto" class="form-control" id="carritoCosto" [(ngModel)]="carrito.costo"
+                            #carritoCosto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && carritoCosto.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>El carrito debe tener un costo</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carritoId"><b>ID</b></label>
+                        <textarea name="carritoId" class="form-control" id="carritoId" [(ngModel)]="carrito.id"
+                            #carritoId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && carritoId.invalid }"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            <div>El carrito necesita un id</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>

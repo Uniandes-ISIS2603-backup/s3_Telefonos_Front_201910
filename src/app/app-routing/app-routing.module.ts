@@ -35,14 +35,15 @@ const routes: Routes = [
     },
     {
         path: 'carritoDeCompras',
-        children:[{
-            path: 'list',
-            component:CarritoDeComprasListComponent
+        children:[
+        {
+                path: 'add',
+                component:CarritoDeComprasCreateComponent,
+                runGuardsAndResolvers: 'always'
         },
         {
-            path: 'add',
-            component:CarritoDeComprasCreateComponent,
-            runGuardsAndResolvers: 'always'
+            path: 'list',
+            component:CarritoDeComprasListComponent
         },
         {
             path: ':id',
