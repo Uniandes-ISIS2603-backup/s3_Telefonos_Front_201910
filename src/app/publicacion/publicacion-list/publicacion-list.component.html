@@ -24,10 +24,10 @@
         </div>
         <div class="col-8">
             <div *ngIf="selectedPublicacion">
-                <app-comprador-detail [publicacionDetail]="selectedPublicacion"></app-comprador-detail>
+                <app-publicacion-detail [publicacionDetail]="selectedPublicacion"></app-publicacion-detail>
             </div>
             <div *ngIf="showCreate">
-                    <app-publicacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-publiacion-create>
+                    <app-publicacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-publicacion-create>
             </div>
         </div>   
     </div>

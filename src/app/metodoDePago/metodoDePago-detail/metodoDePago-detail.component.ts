@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { MetodoDePagoService } from '../metodoDePago.service';
 
 @Component({
-  selector: 'app-factura-detail',
-  templateUrl: './factura-detail.component.html',
-  styleUrls: ['./factura-detail.component.css']
+  selector: 'app-metodoDePago-detail',
+  templateUrl: './metodoDePago-detail.component.html',
+  styleUrls: ['./metodoDePago-detail.component.css']
 })
 export class MetodoDePagoDetailComponent implements OnInit {
 

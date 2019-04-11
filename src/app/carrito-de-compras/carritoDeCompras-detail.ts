@@ -1,4 +1,5 @@
 import { CarritoDeCompras } from "./carritoDeCompras";
+import { Publicacion } from "../publicacion/publicacion";
 
 export class CarritoDeComprasDetail extends CarritoDeCompras{
 

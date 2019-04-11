@@ -3,9 +3,9 @@ import { MetodoDePagoService } from '../metodoDePago.service';
 import { MetodoDePago } from '../metodoDePago';
 
 @Component({
-  selector: 'app-factura-list',
-  templateUrl: './factura-list.component.html',
-  styleUrls: ['./factura-list.component.css']
+  selector: 'app-metodoDePago-list',
+  templateUrl: './metodoDePago-list.component.html',
+  styleUrls: ['./metodoDePago-list.component.css']
 })
 export class MetodoDePagoListComponent implements OnInit {
 
