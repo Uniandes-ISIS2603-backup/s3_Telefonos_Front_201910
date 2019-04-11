@@ -12,7 +12,32 @@ import { CarritoDeComprasDetailComponent } from '../carrito-de-compras/carrito-d
 
 const routes: Routes = [
 
-     {
+    
+    {
+        path: 'celulares',
+        children:[{
+            path: 'list',
+            component: CelularListComponent
+        },
+        {
+            path:':imei',
+            component: CelularDetailComponent
+        }
+        ]
+    },
+    {
+        path: 'carritoDeCompras',
+        children:[{
+            path: 'list',
+            component:CarritoDeComprasListComponent
+        },
+        {
+            path: ':id',
+            component: CarritoDeComprasDetailComponent
+        }
+        ]
+    },
+    {
         path: 'auth',
         children: [
             {
@@ -44,31 +69,7 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: 'home',
-    },
-    {
-        path: 'celulares',
-        children:[{
-            path: 'list',
-            component:CelularListComponent
-        },
-        {
-            path:':referencia',
-            component: CelularDetailComponent
-        }
-        ]
-    },
-    {
-        path: 'carritoDeCompras',
-        children:[{
-            path: 'list',
-            component:CarritoDeComprasListComponent
-        },
-        {
-            path: ':id',
-            component: CarritoDeComprasDetailComponent
-        }
-        ]
-    },
+    }
 ];
 
 @NgModule({

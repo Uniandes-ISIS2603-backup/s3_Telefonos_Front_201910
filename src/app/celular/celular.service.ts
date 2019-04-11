@@ -26,7 +26,7 @@ export class CelularService{
      * Método que retorna un observable de tipo celular detail
      * @param imei, imei del celular que se quiere obtener
      */
-    getCelularDetail(imei:string): Observable<CelularDetail>{
+    getCelularDetail(imei:number): Observable<CelularDetail>{
         return this.http.get<CelularDetail>(API_URL+'celulares-'+imei+'.json');
     }
 }

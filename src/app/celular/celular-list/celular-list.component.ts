@@ -20,7 +20,7 @@ export class CelularListComponent implements OnInit {
   @Input() celulares: Celular[];
 
   /**
-   * Retorn todos los celulares de la app
+   * Retorna todos los celulares de la app
    */
   getCelulares(): void{
     this.celularService.getCelulares().subscribe(theCelulars => this.celulares = theCelulars);

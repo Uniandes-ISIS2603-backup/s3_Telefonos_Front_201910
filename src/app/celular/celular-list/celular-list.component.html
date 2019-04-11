@@ -1,25 +1,25 @@
-<div class = "container-fluid">
-    <div class = "col-md-2">
-      <table class = "table table-striped">
-        <thead class = "thead-dark">
-          <tr>
-            <th>Marca Celular</th>
-            <th>Modelo Celular</th>
-            <th>Referencia Celular</th>
-            <th>Celular Registrada</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor = "let c of celulares">
-            <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.marca}}</a></td>
-            <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.modelo}}</a></td>
-            <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.referencia}}</a></td>
-            <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.registrado}}</a></td>
-            
-          </tr>
-         
+  <div class = "container-fluid">
+      <div class = "col-md-2">
+        <table class = "table table-striped">
+          <thead class = "thead-dark">
+            <tr>
+              <th>Marca Celular</th>
+              <th>Modelo Celular</th>
+              <th>Referencia Celular</th>
+              <th>Celular Registrada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let c of celulares">
+              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.marca}}</a></td>
+              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.modelo}}</a></td>
+              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.referencia}}</a></td>
+              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.registrado}}</a></td>
+              
+            </tr>
           
-        </tbody>
-      </table>
+            
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
