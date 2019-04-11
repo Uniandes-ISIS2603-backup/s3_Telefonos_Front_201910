@@ -1,0 +1,66 @@
+[
+    {
+        "id":1,
+        "costoEstimado":450000,
+        "tablets":[
+            {
+                "marca":"Samsung",
+                "modelo":"Galaxy Tab S4",
+                "referencia":"gts4",
+                "registrado":true
+            },
+            {
+                "marca":"Sony",
+                "modelo":"Xperia Z4 Tablet",
+                "referencia":"snyxz4",
+                "registrado":true
+            }
+        ],
+        "celulares":[
+            {
+                "marca":"Samsung",
+                "modelo":"S10",
+                "referencia":"smsng10",
+                "registrado":true
+            },
+            {
+                "marca":"Sony",
+                "modelo":"Xperia",
+                "referencia":"snyx",
+                "registrado":true
+            }
+        ]
+    },
+    {
+        "id":2,
+        "costoEstimado":600000,
+        "tablets":[
+            {
+                "marca":"Motorola",
+                "modelo":"Xoom",
+                "referencia":"motoxoom",
+                "registrado":true
+            },
+            {
+                "marca":"Apple",
+                "modelo":"Ipad Mini 2",
+                "referencia":"ipm2",
+                "registrado":true
+            }
+        ],
+        "celulares":[
+            {
+                "marca":"Motorola",
+                "modelo":"G6",
+                "referencia":"motog6",
+                "registrado":true
+            },
+            {
+                "marca":"Apple",
+                "modelo":"Iphone 6",
+                "referencia":"iph6",
+                "registrado":true
+            }
+        ]
+    }
+]

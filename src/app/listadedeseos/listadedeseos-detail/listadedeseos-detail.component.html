@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h2>Lista de deseos con id {{listaDetail.id}}:</h2>
+  <h5>Costo estimado:</h5>
+  <p>{{listaDetail.costoEstimado}}</p>
+  <h5>Tablets:</h5>
+  <ul>
+    <li *ngFor="let t of listaDetail.tablets"><a routerLink="/tablets/{{t.referencia}}">{{t.marca}} {{t.modelo}}</a></li>
+  </ul>
+  <h5>Celulares:</h5>
+  <ul>
+    <li *ngFor="let c of listaDetail.celulares">{{c.marca}} {{c.modelo}}</li>
+  </ul>
+</div>

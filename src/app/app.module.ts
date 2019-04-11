@@ -9,11 +9,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {TabletModule} from './tablet/tablet.module';
 
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { ListadedeseosModule } from './listadedeseos/listadedeseos.module';
+
+
+
+
 import { CompradorModule } from './comprador/comprador.module';
 import { ProveeedorModule } from './proveeedor/proveeedor.module';
 import { FacturaModule } from './factura/factura.module';
@@ -24,6 +30,8 @@ import { FacturaModule } from './factura/factura.module';
         AppComponent
     ],
     imports: [
+        TabletModule,
+        ListadedeseosModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
