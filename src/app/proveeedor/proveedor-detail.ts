@@ -6,5 +6,5 @@ export class ProveedorDetail extends Proveedor{
     /**
      * Facturas asociadas al proveedor
      */
-    facturas: Factura[];
+    facturasDeVentas: Factura[];
 }
