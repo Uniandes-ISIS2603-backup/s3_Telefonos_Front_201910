@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+                <div class="row justify-content-center align-self-center">
+                        <button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                            (click)="showHideCreate()">Crear un Metodo De Pago</button>
+                    </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del metodo de pago</th> 
+                </tr> 
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let metodoDePago of metodosDePago"
+                    (click)="onSelected(metodoDePago.id)">
+                    <td style="cursor: pointer;"> 
+                <dd>{{factura.nombre}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedMetodoDePago">
+                <app-metodoDePago-detail [metodoDePagoDetail]="selectedMetodoDePago"></app-metodoDePago-detail>
+            </div>
+            <div *ngIf="showCreate">
+                    <app-metodoDePago-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-metodoDePago-create>
+            </div>
+        </div>   
+    </div>
+</div>

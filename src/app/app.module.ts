@@ -21,7 +21,8 @@ import { TabletModule } from './tablet/tablet.module';
 import { ListadedeseosModule } from './listadedeseos/listadedeseos.module';
 import { CelularModule } from './celular/celular.module';
 import { CarritoDeComprasModule } from './carrito-de-compras/carrito-de-compras.module';
-
+import { PublicacionModule}  from './publicacion/publicacion.module';
+import { MetodoDePagoModule}  from './metodoDePago/metodoDePago.module';
 
 @NgModule({
     declarations: [
@@ -39,6 +40,8 @@ import { CarritoDeComprasModule } from './carrito-de-compras/carrito-de-compras.
         CompradorModule,
         ProveeedorModule,
         FacturaModule,
+        PublicacionModule,
+        MetodoDePagoModule,
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,

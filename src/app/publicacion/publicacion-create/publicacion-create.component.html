@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una publicacion</h2>
+        <br>
+        <form name="publicacion" (ngSubmit)="f.form.valid && createPublicacion()" #f="ngForm" novalidate>
+                <div class="form-group">
+                        <label for="publicacionCreacion"><b>fecha de publicacion</b></label>
+                        <input type="date" name="publicacionCreacion" class="form-control" id="publicacionCreacion" [(ngModel)]="publicacion.fechaPublicacion"
+                            #publicacionCreacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && publicacionCreacion.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>fecha invalida</div>
+                        </div>
+                    </div>
+            <div class="form-group">
+                <label for="publicacionPrice"><b>Precio</b></label>
+                <input type="number" name="publicacionPrice" class="form-control" id="publicacionPrice" [(ngModel)]="publicacion.precio"
+                    #publicacionPrice="ngModel" [ngClass]="{ 'is-invalid': f.submitted && publicacionPrice.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el precio de la publicacion</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

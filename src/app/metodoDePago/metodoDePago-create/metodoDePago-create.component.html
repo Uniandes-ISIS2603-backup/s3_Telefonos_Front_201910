@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Crear un MetodoDePago</h2>
+            <br>
+            <form name="metodoDePago" (ngSubmit)="f.form.valid && createMetodoDePago()" #f="ngForm" novalidate>
+                
+                <div class="form-group">
+                    <label for="metodoNombre"><b>nombre</b></label>
+                    <input type="text" name="metodoNombre" class="form-control" id="metodoNombre" [(ngModel)]="MetodoDePago.nombre"
+                        #metodoNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && metodoNombre.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>nombre invalido</div>
+                    </div>
+                </div>
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>

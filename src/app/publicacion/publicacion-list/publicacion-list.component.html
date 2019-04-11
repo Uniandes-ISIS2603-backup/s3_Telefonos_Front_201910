@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+                <div class="row justify-content-center align-self-center">
+                        <button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                            (click)="showHideCreate()">Crear una publicacion</button>
+                    </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">precio</th> 
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let publicacion of publicaciones"
+                        (click)="onSelected(publicacion.id)">
+                        <td style="cursor: pointer;"> 
+                <dd>{{publicacion.precio}}</dd>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="selectedPublicacion">
+                <app-comprador-detail [publicacionDetail]="selectedPublicacion"></app-comprador-detail>
+            </div>
+            <div *ngIf="showCreate">
+                    <app-publicacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-publiacion-create>
+            </div>
+        </div>   
+    </div>
+</div>
