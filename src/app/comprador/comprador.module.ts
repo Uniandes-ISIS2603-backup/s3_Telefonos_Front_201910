@@ -23,7 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   declarations: [CompradorListComponent, CompradorDetailComponent, CompradorCreateComponent],
   providers: [CompradorService],
-  exports:[CompradorListComponent]
+  exports:[CompradorListComponent, CompradorCreateComponent]
 })
 export class CompradorModule { }
  

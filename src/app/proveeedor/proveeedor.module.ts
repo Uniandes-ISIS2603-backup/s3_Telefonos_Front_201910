@@ -13,6 +13,6 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [ProveedorListComponent, ProveedorDetailComponent, ProveedorCreateComponent],
   providers:[ProveedorService],
-  exports:[ProveedorListComponent]
+  exports:[ProveedorListComponent, ProveedorCreateComponent]
 })
 export class ProveeedorModule { } 

@@ -1,10 +1,6 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-                <div class="row justify-content-center align-self-center">
-                        <button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                            (click)="showHideCreate()">Crear un comprador</button>
-                    </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -25,9 +21,6 @@
         <div class="col-8">
             <div *ngIf="selectedComprador">
                 <app-comprador-detail [compradorDetail]="selectedComprador"></app-comprador-detail>
-            </div>
-            <div *ngIf="showCreate">
-                    <app-comprador-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comprador-create>
             </div>
         </div>   
     </div>

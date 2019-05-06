@@ -45,7 +45,7 @@ export class ProveedorCreateComponent implements OnInit {
         this.proveedorService.createProveedor(this.proveedor).subscribe((theProveedor) => {
                 this.proveedor = theProveedor;
                 this.create.emit();
-                this.toastrService.success("El proveedor fue creado", "Proveedor creation");
+                this.toastrService.success('Su perfil fue creado, por favor oprima finalizar');
             });
             return this.proveedor;
     }

@@ -5,21 +5,42 @@
         <br>
         <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="username"><b>Name</b></label>
-                <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name" required>
+                        <label for="role"><b>Role</b></label>
+                        <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
+                            <option [value]="role" *ngFor="let role of roles">{{role}}</option>
+                        </select>
             </div>
-            <div class="form-group">
-                <label for="password"><b>Password</b></label>
-                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
+            <div *ngIf="user.role=='Administrador'"> 
+                    <br>
+                    <h2 class="text-center">Registrar un adminisrador</h2>
+                    <br>           
+                <div class="form-group">
+                    <label for="username"><b>Name</b></label>
+                    <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
+                </div>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Registrar Administrador</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="role"><b>Role</b></label>
-                <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
-                    <option [value]="role" *ngFor="let role of roles">{{role}}</option>
-                </select>
+            <div *ngIf="user.role=='Comprador'">            
+                    <app-comprador-create></app-comprador-create> 
+                    <br>
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                            <button type="submit" class="btn btn-success">Finalizar</button>
+                    </div>
             </div>
-            <div class="justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+            <div *ngIf="user.role=='Proveedor'">            
+                    <app-proveedor-create></app-proveedor-create> 
+                    <br>
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                            <button type="submit" class="btn btn-success">Finalizar</button>
+                    </div>
             </div>
         </form>
         <router-outlet></router-outlet>

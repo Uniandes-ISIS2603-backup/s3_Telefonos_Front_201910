@@ -45,8 +45,7 @@ export class CompradorCreateComponent implements OnInit {
         this.compradorService.createComprador(this.comprador).subscribe((comprador) => {
                 this.comprador = comprador;
                 this.create.emit();
-                this.toastrService.success("El comprador fue creado", "Comprador creation");
-                
+                this.toastrService.success('Su perfil fue creado, por favor oprima finalizar');
             });
             return this.comprador;
     }

@@ -18,7 +18,7 @@ export class AuthSignUpComponent implements OnInit {
     */
     constructor(
         private authService: AuthService,
-        private toastrService: ToastrService,
+        private toastrService: ToastrService
     ) { }
 
     user: User;
@@ -30,7 +30,8 @@ export class AuthSignUpComponent implements OnInit {
     */
     signUp(): void {
         this.authService.login(this.user.role);
-        this.toastrService.success('Successfully signed up')
+        this.toastrService.success('Successfully signed up');
+        console.log(this.user)
     }
 
     /**
@@ -38,7 +39,7 @@ export class AuthSignUpComponent implements OnInit {
     */
     ngOnInit() {
         this.user = new User();
-        this.roles = ['Administrator', 'Comprador', 'Proveedor'];
+        this.roles = ['Administrador', 'Comprador', 'Proveedor'];
     }
 
 }
