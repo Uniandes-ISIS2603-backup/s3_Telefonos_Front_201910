@@ -1,19 +1,23 @@
-<div class="container-fluid">
-    <div class="row">
+<br>
+<h1 align="center">Compradores</h1>
+<div class="container-fluid ">
+    <div class="row align-items-center">
         <div class="col">
             <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="h4">Usuario del comprador</th> 
-                    </tr>
-                    
-                </thead>
+                
                 <tbody>
-                    <tr *ngFor = "let comprador of compradores"
-                        (click)="onSelected(comprador.id)">
-                        <td style="cursor: pointer;"> 
-                <dd>{{comprador.usuario}}</dd>
-                </td>
+                    <tr *ngFor = "let comprador of compradores">
+                    <div class="row align-items-center">
+                    <div class ="col">
+                            <img id="logo" src="../assets/user.png"  width="40%" class="center-block">
+                    </div>
+                    <div class ="col-3 text-center">
+                        <dd>{{comprador.usuario}}</dd>
+                    </div>
+                    <div class ="col-5 text-center">
+                        <dd><button type="button" class="btn btn-link" (click)="onSelected(comprador.id)">Mas información <i class ="fa fa-question-circle"></i></button></dd>
+                    </div>
+                    </div>
                 </tr>
                 </tbody>
             </table>
