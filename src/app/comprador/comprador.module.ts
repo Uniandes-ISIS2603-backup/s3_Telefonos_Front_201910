@@ -25,7 +25,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   ],
   declarations: [CompradorListComponent, CompradorDetailComponent, CompradorCreateComponent],
   providers: [CompradorService],
-  exports:[CompradorListComponent, CompradorCreateComponent]
+  exports:[CompradorListComponent, CompradorCreateComponent,  CompradorDetailComponent]
 })
 export class CompradorModule { }
  

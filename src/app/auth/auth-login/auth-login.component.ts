@@ -31,7 +31,8 @@ export class AuthLoginComponent implements OnInit {
     * Logs the user in with the selected role
     */
     login(): void {
-        this.authService.login(this.user.role);
+        console.log(this.user.role, this.user.name)
+        this.authService.login(this.user.role, this.user.name);
         this.toastrService.success('Logged in')
     }
 
@@ -40,7 +41,7 @@ export class AuthLoginComponent implements OnInit {
     */
     ngOnInit() {
         this.user = new User();
-        this.roles = ['Comprador', 'Proveedor', 'Proveedor'];
+        this.roles = ['Comprador', 'Proveedor', 'Administrador'];
     }
 
 }

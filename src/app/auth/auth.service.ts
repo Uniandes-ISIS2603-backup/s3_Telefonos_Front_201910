@@ -64,16 +64,21 @@ export class AuthService {
     /**
      * Logs the user in with the desired role
      * @param role The desired role to set to the user
+     * @param name The desired username to set to the user
      */
-    login (role): void {
-        if (role === 'Administrator') {
+    login (role, name): void {
+        if (role === 'Administrador') {
             this.setAdministratorRole();
         } else if (role === 'Comprador') {
             this.setCompradorRole();
         } else{
             this.setProveedorRole()
         }
+        console.log(role);
+        localStorage.setItem('username', name);
+        console.log('--'+localStorage.getItem('username'));
         this.router.navigateByUrl('/');
+        
     }
 
     /**

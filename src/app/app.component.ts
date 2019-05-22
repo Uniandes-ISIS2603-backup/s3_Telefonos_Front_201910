@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import { Comprador } from './comprador/comprador';
+import { Proveedor } from './proveeedor/proveedor';
+import { CompradorService } from './comprador/comprador.service';
+import { ProveedorService } from './proveeedor/proveedor.service';
 
 /**
  * The app component. This component is the base of s3_Telefonos-Front
@@ -16,18 +20,21 @@ export class AppComponent implements OnInit {
      */
     title: String;
 
+
     /**
      * Assigns a title to the web page
      */
     ngOnInit(): void {
-        this.title = "s3_Telefonos-Front";
+        this.title = "CambiaPhone";
         this.authService.start();
     }
 
-       /**
+    /**
      * @ignore
      */
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService,
+        private compradorService: CompradorService,
+        private proveedorService: ProveedorService) { }
 
     logout(): void {
         this.authService.logout()
