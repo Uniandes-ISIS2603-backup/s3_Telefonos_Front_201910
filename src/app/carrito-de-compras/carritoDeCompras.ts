@@ -3,7 +3,7 @@ export class CarritoDeCompras{
     /**
      * costo de lo que hay en el carrito de compras
      */
-    costo: number;
+    costoTotal: number;
     
     /**
      * identificador del carrito de compras
