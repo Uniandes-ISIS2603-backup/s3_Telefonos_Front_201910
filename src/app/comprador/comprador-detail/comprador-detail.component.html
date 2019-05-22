@@ -18,8 +18,11 @@
               Referencia: {{factura.referencia}}
             <br>
             Fecha de expedicion: {{factura.fecha}}
+            <br>
+            Proveedor: {{factura.proveedor.usuario}}
             </li>
           </ul>
+          <br>
           <h4>Métodos de pago</h4>
           <ul class="list-group" *ngFor = "let metodo of compradorDetail.metodosDePago">
             <li class="list-group-item">

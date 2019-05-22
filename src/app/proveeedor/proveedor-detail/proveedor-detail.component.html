@@ -1,16 +1,36 @@
 <div class="panel-body">
-    <div class="border margin">
-      <h2>Usuario:  {{proveedorDetail.usuario}}</h2>
-      <p>Correo electronico: {{proveedorDetail.correoElectronico}}</p>
-      <p>Nombre: {{proveedorDetail.nombre}}</p>
-      <p>Raiting: {{proveedorDetail.raiting}}</p>
+    <div class="card">
+        <br>
+        <div class ="row" align="center">
+            <div class ="col"></div>
+            <div class ="col-2 text-center">
+                <img src="../assets/user.png" class="card-img-top" width="20" height="100" >
+            </div>
+            <div class ="col"></div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Usuario:  {{proveedorDetail.usuario}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre: {{proveedorDetail.nombre}}</h6>
+      <p class="card-text">Correo electronico: {{proveedorDetail.correoElectronico}}</p>
+      <p class="card-text">Raiting: {{proveedorDetail.raiting}}</p>
       <h4>Facturas</h4>
-      <ul class="list-group" *ngFor = "let factura of proveedorDetail.facturasDeVentas">
-        <li class="list-group-item">
-          Referencia: {{factura.referencia}}
+          <ul class="list-group" *ngFor = "let factura of proveedorDetail.facturasDeVentas">
+            <li class="list-group-item">
+              Referencia: {{factura.referencia}}
+            <br>
+              Fecha de expedicion: {{factura.fecha}}
+              <br>
+              Comprador: {{factura.comprador.usuario}}
+            </li>
+          </ul>
           <br>
-          Fecha de expedicion: {{factura.fecha}}
-        </li>
-      </ul>
+          <h4>Seguros</h4>
+          <ul class="list-group" *ngFor = "let seguro of proveedorDetail.seguros">
+            <li class="list-group-item">
+            Aseguradora: {{seguro.aseguradora}}
+            <br>
+            Monto: {{seguro.monto}}
+            </li>
+          </ul> 
     </div>
   </div>

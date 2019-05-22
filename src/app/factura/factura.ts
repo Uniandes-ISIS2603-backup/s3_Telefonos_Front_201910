@@ -1,10 +1,11 @@
 import { Comprador } from "../comprador/comprador";
 import { Proveedor } from "../proveeedor/proveedor";
+import { Publicacion } from "../publicacion/publicacion";
 
 /**
  * Esta clase representa una factura de CambiaPhone. 
  * Contiene toda la informacion relevante de una factura.
- */
+ */ 
 export class Factura {
 
     /**
@@ -35,6 +36,6 @@ export class Factura {
     /**
      * Publicación asociada a la factura
      */
-    publicacion: String; 
+    publicacion: Publicacion; 
     
 }

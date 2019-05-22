@@ -1,19 +1,27 @@
+<br>
+<h1 align="center">Proveedores</h1>
+<br>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row align-items-center">
         <div class="col">
             <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="h4">Usuario del proveedor</th>    
-                    </tr>
-                </thead>
+                
                 <tbody>
-                    <tr *ngFor = "let proveedor of proveedores"
-                        (click)="onSelected(proveedor.id)">
-                        <td style="cursor: pointer;"> 
-                <dd>{{proveedor.usuario}}</dd>
-                </td>
-                </tr>
+                    <tr *ngFor = "let proveedor of proveedores"> 
+                            <div class="row align-items-center">
+                                    <div class ="col">
+                                            <img id="logo" src="../assets/user.png"  width="40%" class="center-block">
+                                    </div>
+                                    <div class ="col-3 text-center">
+                                        <dd>{{proveedor.usuario}}</dd>
+                                    </div>
+                                    <div class ="col-6 text-center">
+                                        <dd><button type="button" class="btn btn-link" (click)="onSelected(proveedor.id)">Mas información <i class ="fa fa-question-circle"></i></button></dd>
+                                    </div>
+                                    <div class ="col-1 text-center" *ngxPermissionsOnly="['ADMIN']">
+                                            <button class="btn btn-danger" (click)="deleteProveedor(proveedor.id)"><span class="fa fa-trash"></span></button>
+                                    </div>
+                                    </div>
                 </tbody>
             </table>
         </div>

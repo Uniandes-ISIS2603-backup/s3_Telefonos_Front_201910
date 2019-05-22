@@ -45,6 +45,15 @@ export class ProveedorService {
     */
    createProveedor(proveedor):Observable<Proveedor>{
     return this.http.post<Proveedor>(API_URL+proveedores, proveedor);
-  } 
+  }  
+
+  /**
+    * Borrar un proveedor
+    * @param proveedorId El proveedor que va a ser eliminado
+    * @returns True si el proveedor fue borrado, false de lo contrario
+    */
+   deleteProveedor(proveedorId): Observable<ProveedorDetail> {
+    return this.http.delete<ProveedorDetail>(API_URL + proveedores + '/' +proveedorId);
+}
 
   }

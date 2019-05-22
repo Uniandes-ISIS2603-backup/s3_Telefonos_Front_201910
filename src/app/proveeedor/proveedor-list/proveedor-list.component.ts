@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ProveedorService } from '../proveedor.service';
 import { Proveedor } from '../proveedor';
 import { ProveedorDetail } from '../proveedor-detail';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-proveedor-list',
@@ -14,7 +16,10 @@ export class ProveedorListComponent implements OnInit {
    * El constructor para el componente
    * @param proveedorService El proveedor del servicio Proveedor
    */
-  constructor(private proveedorService: ProveedorService) { }
+  constructor(private proveedorService: ProveedorService,
+    private viewRef: ViewContainerRef,
+    private modalDialogService:ModalDialogService,
+    private toastrService: ToastrService) { }
 
   /**
   * La lista de proveedores que pertenecen a CambiaPhone
@@ -78,6 +83,34 @@ getProveedorDetail(): void {
           
       });
 }
+
+/**
+    * Borra un proveedor
+    */
+   deleteProveedor(proveedorId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Borrar un proveedor',
+        childComponent: SimpleModalComponent,
+        data: {text: '¿Está seguro de eliminar este proveedor?'},
+        actionButtons: [
+            {
+                text: 'Sí',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.proveedorService.deleteProveedor(proveedorId).subscribe(() => {
+                        this.toastrService.error("El proveedor se eliminó exitosamente", "Proveedor eliminado");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
+}
+
 
 /**
     * Este metodo va a inicializar el componente obteniendo la lista de proveedores del servicio
