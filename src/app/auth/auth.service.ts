@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
-
+ 
 /**
  * The service provider for everything related to authentication
  */
@@ -41,19 +41,19 @@ export class AuthService {
 
     setCompradorRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('COMP', ['leave_review']);
+        this.roleService.addRole('COMP', ['']);
         localStorage.setItem('role', 'COMP');
     }
 
     setProveedorRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('PROV', ['leave_review']);
+        this.roleService.addRole('PROV', ['']);
         localStorage.setItem('role', 'PROV');
     }
 
     setAdministratorRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
+        this.roleService.addRole('ADMIN', ['']);
         localStorage.setItem('role', 'ADMIN');
     }
 

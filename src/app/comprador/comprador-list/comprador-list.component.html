@@ -10,7 +10,7 @@
                     <tr *ngFor = "let comprador of compradores">
                     <div class="row align-items-center">
                     <div class ="col">
-                            <img id="logo" src="../assets/user.png"  width="40%" class="center-block">
+                            <img id="logo" src="../assets/user.png"  width="90%" class="center-block">
                     </div>
                     <div class ="col-3 text-center">
                         <dd>{{comprador.usuario}}</dd>
@@ -26,7 +26,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-8"> 
+        <div class="col-1"> </div>
+        <div class="col-7"> 
             <div *ngIf="selectedComprador">
                 <app-comprador-detail [compradorDetail]="selectedComprador"></app-comprador-detail>
             </div>

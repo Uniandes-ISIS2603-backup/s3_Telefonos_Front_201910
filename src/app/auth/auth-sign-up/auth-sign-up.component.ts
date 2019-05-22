@@ -24,7 +24,7 @@ export class AuthSignUpComponent implements OnInit {
     user: User;
 
     roles: String[];
-
+ 
     /**
     * Sign the user up with the selected role
     */
