@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 import { Comprador } from '../comprador';
 import { CompradorService } from '../comprador.service';
 import { CompradorDetail } from '../comprador-detail';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ToastrService } from 'ngx-toastr';
 
 /**
  * El componente para listar compradores en CambiaPhone
@@ -18,7 +20,10 @@ export class CompradorListComponent implements OnInit {
     * Constructor para el componente
     * @param compradorService El proveedor del servicio Comprador 
     */
-  constructor(private compradorService: CompradorService) { }
+  constructor(private compradorService: CompradorService,
+    private viewRef: ViewContainerRef,
+    private modalDialogService:ModalDialogService,
+    private toastrService: ToastrService) { }
 
     /**
     * La lista de compradores que pertenecen a CambiaPhone
@@ -81,6 +86,33 @@ getCompradorDetail(): void {
           console.log(this.selectedComprador);
           
       });
+}
+
+   /**
+    * Borra un comprador
+    */
+   deleteComprador(compradorId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Borrar un comprador',
+        childComponent: SimpleModalComponent,
+        data: {text: '¿Está seguro de eliminar este comprador?'},
+        actionButtons: [
+            {
+                text: 'Sí',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.compradorService.deleteComprador(compradorId).subscribe(() => {
+                        this.toastrService.error("El comprador se eliminó exitosamente", "Comprador eliminado");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
 }
 
 /**

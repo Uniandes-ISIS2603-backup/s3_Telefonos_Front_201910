@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,  
+    NgxPermissionsModule.forRoot()
   ],
   declarations: [CompradorListComponent, CompradorDetailComponent, CompradorCreateComponent],
   providers: [CompradorService],

@@ -1,15 +1,33 @@
 <div class="panel-body">
-  <div class="border margin">
-    <h2>Usuario:  {{compradorDetail.usuario}}</h2>
-    <p>Correo electronico: {{compradorDetail.correoElectronico}}</p>
-    <p>Nickname: {{compradorDetail.apodo}}</p>
-    <h4>Facturas</h4>
-    <ul class="list-group" *ngFor = "let factura of compradorDetail.facturasDeCompra">
-      <li class="list-group-item">
-        Referencia: {{factura.referencia}}
+    <div class="card">
         <br>
-        Fecha de expedicion: {{factura.fecha}}
-      </li>
-    </ul>
-  </div>
-</div>
+        <div class ="row" align="center">
+            <div class ="col"></div>
+            <div class ="col-2 text-center">
+                <img src="../assets/user.png" class="card-img-top" width="20" height="100" >
+            </div>
+            <div class ="col"></div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Usuario:  {{compradorDetail.usuario}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Nickname: {{compradorDetail.apodo}}</h6>
+          <p class="card-text">Correo electronico: {{compradorDetail.correoElectronico}}</p>
+          <h4>Facturas</h4>
+          <ul class="list-group" *ngFor = "let factura of compradorDetail.facturasDeCompra">
+            <li class="list-group-item">
+              Referencia: {{factura.referencia}}
+            <br>
+            Fecha de expedicion: {{factura.fecha}}
+            </li>
+          </ul>
+          <h4>Métodos de pago</h4>
+          <ul class="list-group" *ngFor = "let metodo of compradorDetail.metodosDePago">
+            <li class="list-group-item">
+            Banco: {{metodo.banco}}
+            <br>
+            Tipo: {{metodo.tipo}}
+            </li>
+          </ul>
+        </div>
+    </div>
+

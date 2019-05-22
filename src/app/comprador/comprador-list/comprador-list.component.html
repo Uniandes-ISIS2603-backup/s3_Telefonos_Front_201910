@@ -1,5 +1,6 @@
 <br>
 <h1 align="center">Compradores</h1>
+<br>
 <div class="container-fluid ">
     <div class="row align-items-center">
         <div class="col">
@@ -14,8 +15,11 @@
                     <div class ="col-3 text-center">
                         <dd>{{comprador.usuario}}</dd>
                     </div>
-                    <div class ="col-5 text-center">
+                    <div class ="col-6 text-center">
                         <dd><button type="button" class="btn btn-link" (click)="onSelected(comprador.id)">Mas información <i class ="fa fa-question-circle"></i></button></dd>
+                    </div>
+                    <div class ="col-1 text-center" *ngxPermissionsOnly="['ADMIN']">
+                            <button class="btn btn-danger" (click)="deleteComprador(comprador.id)"><span class="fa fa-trash"></span></button>
                     </div>
                     </div>
                 </tr>

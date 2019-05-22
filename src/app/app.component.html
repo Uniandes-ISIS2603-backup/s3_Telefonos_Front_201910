@@ -17,13 +17,13 @@
     </nav>
     <div>
         <ul class="nav nav-bar nav-custom">
-            <li class="nav-item">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                 <a id="compradorTag" class="nav-link"  routerLink="/compradores/list">Compradores</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                 <a id="proveedorTag" class="nav-link" routerLink="/proveedores/list" >Proveedores</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                 <a id="facturaTag" class="nav-link" routerLink="/facturas/list">Facturas</a>
             </li>
             <li class="nav-item">

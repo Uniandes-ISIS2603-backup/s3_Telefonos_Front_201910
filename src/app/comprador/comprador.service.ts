@@ -48,4 +48,13 @@ export class CompradorService {
     return this.http.post<Comprador>(API_URL+compradores, comprador);
   }  
 
+  /**
+    * Borrar un comprador
+    * @param comprapdorId El comprador que va a ser eliminado
+    * @returns True si el comprador fue borrado, false de lo contrario
+    */
+   deleteComprador(compradorId): Observable<CompradorDetail> {
+    return this.http.delete<CompradorDetail>(API_URL + compradores + '/' + compradorId);
+}
+
 }
