@@ -3,9 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import {Celular} from './celular';
 import {CelularDetail} from './celular-detail';
 import {Observable} from 'rxjs';
+import { environment } from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const celulares = 'celulares.json';
+const API_URL = environment.apiURL;
+const celulares = '/celulares';
 
 @Injectable()
 export class CelularService{

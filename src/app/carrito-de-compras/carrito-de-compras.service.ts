@@ -3,10 +3,10 @@ import { Observable } from 'rxjs';
 import { CarritoDeComprasDetail } from './carritoDeCompras-detail';
 import { CarritoDeCompras } from './carritoDeCompras';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
-
-const API_URL ='../../assets/';
-const CARROS='carritosDeCompras.json';
+const API_URL = environment.apiURL;
+const CARROS='/carritosDeCompras';
 @Injectable({
   providedIn: 'root'
 })
