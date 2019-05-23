@@ -31,11 +31,17 @@ export class ProveedorService {
   /**
     * Retorna el objeto observable con los detalles de un proveedor obtenido del API
     * @returns Los detalles del proveedor
-    * getCompradorDetail(compradorId): Observable<CompradorDetail> {
-    return this.http.get<CompradorDetail>(`${API_URL}${compradores}/${compradorId}`);
     */
   getProveedorDetail(proveedorId):Observable<ProveedorDetail>{
     return this.http.get<ProveedorDetail>(`${API_URL}${proveedores}/${proveedorId}`);
+  }
+
+   /**
+    * Retorna el objeto observable con los detalles de un proveedor obtenido del API
+    * @returns Los detalles del proveedor
+    */
+   getProveedorDetailByUsername(username):Observable<ProveedorDetail>{
+    return this.http.get<ProveedorDetail>(`${API_URL}${proveedores}/${username}`);
   }
 
   /**

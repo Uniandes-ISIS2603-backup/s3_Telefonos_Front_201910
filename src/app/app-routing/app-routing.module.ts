@@ -21,6 +21,8 @@ import { CelularDetailComponent } from '../celular/celular-detail/celular-detail
 import { CarritoDeComprasCreateComponent } from '../carrito-de-compras/carrito-de-compras-create/carrito-de-compras-create.component';
 import { CarritoDeComprasListComponent } from '../carrito-de-compras/carrito-de-compras-list/carrito-de-compras-list.component';
 import { CarritoDeComprasDetailComponent } from '../carrito-de-compras/carrito-de-compras-detail/carrito-de-compras-detail.component';
+import { CompradorDetailComponent } from '../comprador/comprador-detail/comprador-detail.component';
+import { PublicacionListComponent } from '../publicacion/publicacion-list/publicacion-list.component';
 
 const routes: Routes = [
     {
@@ -78,6 +80,10 @@ const routes: Routes = [
                 path: 'add',
                 component: CompradorCreateComponent,
                 runGuardsAndResolvers: 'always'
+            }, 
+            {path: ':id',
+            component: CompradorDetailComponent,
+            runGuardsAndResolvers: 'always'
             }
         ]
     },
@@ -121,6 +127,13 @@ const routes: Routes = [
             component: ListadedeseosDetailComponent
         }
         ]
+    },
+    {
+        path: 'publicaciones',
+        children:[{
+            path: 'list',
+            component:PublicacionListComponent
+        } ]
     },
     {
         path: 'auth',

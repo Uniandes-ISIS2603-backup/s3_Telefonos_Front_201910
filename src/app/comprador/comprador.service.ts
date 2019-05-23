@@ -35,6 +35,14 @@ export class CompradorService {
     * Retorna el objeto observable con los detalles de un comprador obtenido del API
     * @returns Los detalles del comprador
     */
+   getCompradorDetailByUsername(username): Observable<CompradorDetail> {
+    return this.http.get<CompradorDetail>(`${API_URL}${compradores}/${username}`);
+  }
+
+   /**
+    * Retorna el objeto observable con los detalles de un comprador obtenido del API por medio del usuario
+    * @returns Los detalles del comprador
+    */
    getCompradorDetail(compradorId): Observable<CompradorDetail> {
     return this.http.get<CompradorDetail>(`${API_URL}${compradores}/${compradorId}`);
   }

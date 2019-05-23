@@ -23,6 +23,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   ],
   declarations: [ProveedorListComponent, ProveedorDetailComponent, ProveedorCreateComponent],
   providers:[ProveedorService],
-  exports:[ProveedorListComponent, ProveedorCreateComponent]
+  exports:[ProveedorListComponent, ProveedorCreateComponent, ProveedorDetailComponent]
 })
 export class ProveeedorModule { } 

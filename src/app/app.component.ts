@@ -20,6 +20,16 @@ export class AppComponent implements OnInit {
      */
     title: String;
 
+    /**
+     * El comprador que inicia sesion
+     */
+    selectedComprador: Comprador;
+
+
+    /**
+     * El proveedor que inicia sesion
+     */
+    selectedProveedor: Proveedor;
 
     /**
      * Assigns a title to the web page
@@ -29,15 +39,22 @@ export class AppComponent implements OnInit {
         this.authService.start();
     }
 
+    profile():void{
+        if(localStorage.getItem('role')=='Comprador'){ 
+            this.selectedComprador=this.authService.getComprador();
+        }
+        else if(localStorage.getItem('role')=='Proveedor'){ 
+            this.selectedProveedor=this.authService.getProveedor();
+        }
+    }
+
     /**
      * @ignore
      */
-    constructor(private authService: AuthService,
-        private compradorService: CompradorService,
-        private proveedorService: ProveedorService) { }
+    constructor(private authService: AuthService) { }
 
     logout(): void {
-        this.authService.logout()
+        this.authService.logout();
     }
 
 }
