@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 //const API_URL = "../../assets/";
 //const tablets = 'tablets.json';
 import { environment } from '../../environments/environment';
+import { ListaDeDeseosDetail } from "../listadedeseos/listadedeseos-detail";
 const API_URL = environment.apiURL;
 const tablets = '/tablets';
 
@@ -17,6 +18,7 @@ const tablets = '/tablets';
     providedIn: 'root'
   })
 export class TabletService{
+  
 
     /**
     * Constructor del servicio
@@ -43,4 +45,10 @@ export class TabletService{
     createTablet(tablet):Observable<Tablet>{
         return this.http.post<Tablet>(API_URL+tablets, tablet);
     }
+
+    agregarTabletALista(referencia: string) {
+        var idLista: string;
+        idLista=localStorage.getItem("idComprador");
+        return this.http.post(API_URL+"/listasDeDeseos/"+idLista+"/tablets/"+referencia, null);
+      }
 }

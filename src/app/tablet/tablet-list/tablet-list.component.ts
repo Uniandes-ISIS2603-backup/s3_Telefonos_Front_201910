@@ -72,6 +72,8 @@ getTabletDetail(): void {
     this.getTablets();
   }
 
-
+  tabletALista(){
+    this.tabletService.agregarTabletALista(this.selectedTablet.referencia);
+  }
 
 }
