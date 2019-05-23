@@ -88,32 +88,7 @@ getPublicacionDetail(): void {
       });
 }
 
-   /**
-    * Borra un comprador
-    */
-   deleteComprador(compradorId): void {
-    this.modalDialogService.openDialog(this.viewRef, {
-        title: 'Borrar un comprador',
-        childComponent: SimpleModalComponent,
-        data: {text: '¿Está seguro de eliminar este comprador?'},
-        actionButtons: [
-            {
-                text: 'Sí',
-                buttonClass: 'btn btn-danger',
-                onAction: () => {
-                    this.compradorService.deleteComprador(compradorId).subscribe(() => {
-                        this.toastrService.error("El comprador se eliminó exitosamente", "Comprador eliminado");
-                        this.ngOnInit();
-                    }, err => {
-                        this.toastrService.error(err, "Error");
-                    });
-                    return true;
-                }
-            },
-            {text: 'No', onAction: () => true}
-        ]
-    });
-}
+  
 
 /**
     * Este metodo va a inicializar el componente obteniendo la lista de compradores del servicio
@@ -121,9 +96,9 @@ getPublicacionDetail(): void {
     */
   ngOnInit() {
     this.showCreate = false;
-    this.selectedComprador = undefined;
-    this.comprador_id = undefined;
-    this.getCompradores();
+    this.selectedPublicacion = undefined;
+    this.publicacion_id = undefined;
+    this.getPublicaciones();
   }
 
 }

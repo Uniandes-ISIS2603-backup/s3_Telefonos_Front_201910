@@ -91,37 +91,39 @@
             <li class="nav-item">
                 <a id="celularTag" class="nav-link" routerLink="/celulares/list">Celulares</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                 <a id="carritoTag" class="nav-link" routerLink="/carritoDeCompras/list">Carrito de compras</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                 <a id="listaTag" class="nav-link" routerLink="/listasDeDeseos/list">Lista de deseos </a>
             </li>
             <li class="nav-item">
                 <a id="publicacionTag" class="nav-link" routerLink="/publicaciones/list">Publicacion</a>
             </li>
-            <li class="nav-item">
-                <a id="metodoTag" class="nav-link" routerLink="/metodoDePago/list">Metodo De Pago</a>
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
+                <a id="metodoTag"  class="nav-link" routerLink="/metodoDePago/list">Metodo De Pago</a>
             </li>
-            <div class="navbar-nav ml-auto flex-column">
-                <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
-                    <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" class="nav-link"
-                                routerLink="/auth/sign-up"><span class="fa fa-user"></span>
-                                Sign Up</a></li>
-                        <li><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span
-                                    class="fa fa-sign-in"></span>Login</a></li>
+            <span>
+                <div class="navbar-nav flex-column">
+                    <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
+                        <div class="form-inline">
+                            <li class="right-space" style="font-size:20px"><a id="signup-navbar-item" class="nav-link"
+                                    routerLink="/auth/sign-up"><span class="fa fa-user"></span>
+                                    Sign Up</a></li>
+                            <li style="font-size:20px"><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span
+                                        class="fa fa-sign-in"></span>Login</a></li>
+                        </div>
+                    </div>
+                    <div class="flex-row" *ngxPermissionsOnly="['COMP', 'PROV', 'ADMIN']">
+                        <div class="form-inline">
+                            
+                            <li style="font-size:20px"><a id="logout-navbar-item" class="nav-link" (click)="logout()"routerLink="compradores/4" href="#"><span
+                                        class="fa fa-sign-out"></span>Logout</a></li>
+                            
+                        </div>
                     </div>
                 </div>
-                <div class="flex-row" *ngxPermissionsOnly="['COMP', 'PROV', 'ADMIN']">
-                    <div class="form-inline">
-                        
-                        <li><a id="logout-navbar-item" class="nav-link" (click)="logout()"routerLink="compradores/4" href="#"><span
-                                    class="fa fa-sign-out"></span>Logout</a></li>
-                        
-                    </div>
-                </div>
-            </div>
+            </span>
           </ul>
         </div>
       </nav>

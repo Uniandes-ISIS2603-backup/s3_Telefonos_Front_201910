@@ -30,9 +30,9 @@ import { Tablet } from "../tablet/tablet";
         */
        precio: number;
 
-       celular: Celular;
+       //celular: Celular;
 
-       tablet: Tablet;
+       //tablet: Tablet;
     
     }
     
