@@ -1,29 +1,25 @@
 <div class = "container-fluid">
+  
+  <div class="row align-items-center">
+    <div class="m-4 col-2" *ngFor="let t of tablets">
+      <div class="card" id="todo" >
+        <img src="https://cdn.discordapp.com/attachments/580950090446012417/580994728015691797/28004513.png"
+          class="card-img-top" alt="Card image cap">
+        <div class="card-body CUERPO">
+          <h5 class="card-title"><a class="figure-caption" routerLink="/tablets/{{t.referencia}}">{{t.modelo}}</a></h5>
+          <p class="card-text">{{t.marca}}</p>
+          <a href="#" class="btn btn-sm btn-outline-success mr-2">Ver Publicación</a>
+          <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-heart"></i></a>
+          <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
   <div class = "col-md-2">
       
-  
-    <table class = "table table-striped">
-      <thead class = "thead-dark">
-        <tr>
-          <th>Marca Tablet</th>
-          <th>Modelo Tablet</th>
-          <th>Referencia Tablet</th>
-          <th>Tablet Registrada</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor = "let t of tablets">
-          <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/tablets/{{t.referencia}}">{{t.marca}}</a></td>
-          <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/tablets/{{t.referencia}}">{{t.modelo}}</a></td>
-          <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/tablets/{{t.referencia}}">{{t.referencia}}</a></td>
-          <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/tablets/{{t.referencia}}">{{t.registrado}}</a></td>
-          <td><i class="fa fa-shopping-cart"></i>              </td>
-              <td><i class="fa fa-heart"></i></td>
-        </tr>
-       
-        
-      </tbody>
-    </table>
+
     <div class="row justify-content-center align-self-center">
         <a routerLink="/tablets/add"><button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
           (click)="showHideCreate()">Crear una tablet</button></a>

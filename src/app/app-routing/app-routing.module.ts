@@ -23,6 +23,8 @@ import { CarritoDeComprasListComponent } from '../carrito-de-compras/carrito-de-
 import { CarritoDeComprasDetailComponent } from '../carrito-de-compras/carrito-de-compras-detail/carrito-de-compras-detail.component';
 import { CompradorDetailComponent } from '../comprador/comprador-detail/comprador-detail.component';
 import { PublicacionListComponent } from '../publicacion/publicacion-list/publicacion-list.component';
+import { PublicacionDetail } from '../publicacion/publicacion-detail';
+import { PublicacionDetailComponent } from '../publicacion/publicacion-detail/publicacion-detail.component';
 
 const routes: Routes = [
     {
@@ -133,7 +135,11 @@ const routes: Routes = [
         children:[{
             path: 'list',
             component:PublicacionListComponent
-        } ]
+        } ,
+    {
+        path:':id',
+        component:PublicacionDetailComponent
+    }]
     },
     {
         path: 'auth',

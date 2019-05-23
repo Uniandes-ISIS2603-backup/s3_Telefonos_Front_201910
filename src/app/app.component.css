@@ -1,25 +1,57 @@
 .nav-custom{
-    background-color: #180D79;
 	color: rgb(255, 255, 255);
 }
 
 .nav-item{
-    background-color: #180D79;
+    font-size: 1.5em;
 	color: rgb(255, 255, 255);
 }
 
+.navbar-brand{
+    font-size: 2em;
+}
+
 .nav-link{
-    background-color: #180D79;
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
 .nav-link:hover{
-    background-color: rgb(138, 114, 245); /* Green */
+    background-color: lightgray; /* Green */
     color: rgb(59, 51, 51);
     font-weight: bold
 }
 
+#basicallyBody{
+    background-size: cover;
+    background-position: center;
+    font-family: Lato, sans-serif;
+    height: 100%;
+    width: 100%;
+    
+}
+
+#content {
+	text-align: center;
+	padding-top: 25%;
+	color: black;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+hr {
+    width: 500px;
+    border:none;
+    height: 5px;
+    background: #000;
+    color: #000;
+}
+
+#re {
+    width: 100%;
+    height: 80px;
+}
 
 
 

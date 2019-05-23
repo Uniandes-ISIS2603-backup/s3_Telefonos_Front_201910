@@ -1,3 +1,6 @@
+import { Celular } from "../celular/celular";
+import { Tablet } from "../tablet/tablet";
+
 /**
  * Esta clase representa una publicacion de CambiaPhone. 
  * Contiene toda la informacion relevante de una publicacion.
@@ -26,6 +29,10 @@
         * El precio de la publicacion
         */
        precio: number;
+
+       celular: Celular;
+
+       tablet: Tablet;
     
     }
     

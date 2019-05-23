@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg ">
+<div class="container-fluid" id="basicallyBody">
+    <!--<nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="#">
             <div class="form-inline">
                 <img id="logo" src="../assets/CambiaPhone.PNG" width="250%" class="center-block">
@@ -68,12 +68,78 @@
 
         <router-outlet></router-outlet>
     </div>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="re">
+        <a class="navbar-brand" href="#">CambiaPh<i class="fa fa-mobile"></i>ne</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
+                <a id="compradorTag" class="nav-link" routerLink="/compradores/list">Compradores</a>
+            </li>
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
+                <a id="proveedorTag" class="nav-link" routerLink="/proveedores/list">Proveedores</a>
+            </li>
+            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
+                <a id="facturaTag" class="nav-link" routerLink="/facturas/list">Facturas</a>
+            </li>
+            <li class="nav-item">
+                <a id="tabletTag" class="nav-link" routerLink="/tablets/list">Tablets</a>
+            </li>
+            <li class="nav-item">
+                <a id="celularTag" class="nav-link" routerLink="/celulares/list">Celulares</a>
+            </li>
+            <li class="nav-item">
+                <a id="carritoTag" class="nav-link" routerLink="/carritoDeCompras/list">Carrito de compras</a>
+            </li>
+            <li class="nav-item">
+                <a id="listaTag" class="nav-link" routerLink="/listasDeDeseos/list">Lista de deseos </a>
+            </li>
+            <li class="nav-item">
+                <a id="publicacionTag" class="nav-link" routerLink="/publicaciones/list">Publicacion</a>
+            </li>
+            <li class="nav-item">
+                <a id="metodoTag" class="nav-link" routerLink="/metodoDePago/list">Metodo De Pago</a>
+            </li>
+            <div class="navbar-nav ml-auto flex-column">
+                <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
+                    <div class="form-inline">
+                        <li class="right-space"><a id="signup-navbar-item" class="nav-link"
+                                routerLink="/auth/sign-up"><span class="fa fa-user"></span>
+                                Sign Up</a></li>
+                        <li><a id="login-navbar-item" class="nav-link" routerLink="/auth/login"><span
+                                    class="fa fa-sign-in"></span>Login</a></li>
+                    </div>
+                </div>
+                <div class="flex-row" *ngxPermissionsOnly="['COMP', 'PROV', 'ADMIN']">
+                    <div class="form-inline">
+                        
+                        <li><a id="logout-navbar-item" class="nav-link" (click)="logout()"routerLink="compradores/4" href="#"><span
+                                    class="fa fa-sign-out"></span>Logout</a></li>
+                        
+                    </div>
+                </div>
+            </div>
+          </ul>
+        </div>
+      </nav>
+
+      
+
+
+
     <div>
         <router-outlet></router-outlet>
         <br>
         <br>
     </div>
-    <footer class="footer bg-light" id="footer">
+
+
+	
+    <!--
+        <footer class="footer bg-light" id="footer">
         <div class="container">
             <p class="navbar-text text-center">
                 <img src="../assets/home.png" alt="logo" width="2%" /><span id="footer-text"></span>
@@ -81,4 +147,8 @@
             </p>
         </div>
     </footer>
+    -->
+   
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </div>

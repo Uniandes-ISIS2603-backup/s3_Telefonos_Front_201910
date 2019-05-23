@@ -121,6 +121,7 @@ export class AuthService {
                     console.log(this.selectedComprador);
 
                 });
+                localStorage.setItem('idComprador', this.selectedComprador.id+"");
         }
         else if (this.role === 'Proveedor') {
             this.proveedorService.getProveedorDetailByUsername(this.username)

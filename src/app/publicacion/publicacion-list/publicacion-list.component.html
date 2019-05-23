@@ -1,34 +1,34 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-                <div class="row justify-content-center align-self-center">
-                        <button [ngClass]="{ 'btn-success': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                            (click)="showHideCreate()">Crear una publicacion</button>
-                    </div>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="h4">precio</th> 
-                    </tr>
-                    
-                </thead>
-                <tbody>
-                    <tr *ngFor = "let publicacion of publicaciones"
-                        (click)="onSelected(publicacion.id)">
-                        <td style="cursor: pointer;"> 
-                <dd>{{publicacion.precio}}</dd>
-                </td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="row align-items-center">
+        <div class="m-4 col-2" *ngFor="let p of publicaciones"  (click)="onSelected(publicacion.id)">
+          <div class="card" id="todo" *ngIf="p.celular!=null; else pTablet">
+            <img src="https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/w_582,c_limit/iphonex-TA.jpg"
+              class="card-img-top" alt="Card image cap">
+            <div class="card-body CUERPO">
+              <h5 class="card-title"><a class="figure-caption" routerLink="/publicaciones/{{p.id}}">{{p.celular.marca}}</a></h5>
+              <p class="card-text">{{p.precio}}</p>
+              <a href="#" class="btn btn-sm btn-outline-success mr-2">Ver Publicación</a>
+              <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-heart"></i></a>
+              <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+          </div>
+         
+
+          <ng-template #pTablet>
+            <div class="card" id="todo">
+                <img src="https://cdn.discordapp.com/attachments/580950090446012417/580994728015691797/28004513.png"
+                  class="card-img-top" alt="Card image cap">
+                <div class="card-body CUERPO">
+                  <h5 class="card-title"><a class="figure-caption" routerLink="/publicaciones/{{p.id}}">{{p.tablet.marca}}</a></h5>
+                  <p class="card-text">{{p.precio}}</p>
+                  <a href="#" class="btn btn-sm btn-outline-success mr-2">Ver Publicación</a>
+                  <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-heart"></i></a>
+                  <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+          </ng-template>
+          <div *ngIf="selectedPublicacion">
+            <app-publicacion-detail [publicacionDetail]="selectedPublicacion"></app-publicacion-detail>
         </div>
-        <div class="col-8">
-            <div *ngIf="selectedPublicacion">
-                <app-publicacion-detail [publicacionDetail]="selectedPublicacion"></app-publicacion-detail>
-            </div>
-            <div *ngIf="showCreate">
-                    <app-publicacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-publicacion-create>
-            </div>
-        </div>   
-    </div>
+        </div>
 </div>
