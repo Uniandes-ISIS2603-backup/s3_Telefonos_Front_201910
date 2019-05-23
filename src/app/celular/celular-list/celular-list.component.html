@@ -1,28 +1,47 @@
-  <div class = "container-fluid">
-      <div class = "col-md-2">
-        <table class = "table table-striped">
-          <thead class = "thead-dark">
-            <tr>
-              <th>Marca Celular</th>
-              <th>Modelo Celular</th>
-              <th>Referencia Celular</th>
-              <th>Celular Registrada</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor = "let c of celulares">
-              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.marca}}</a></td>
-              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.modelo}}</a></td>
-              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.referencia}}</a></td>
-              <td style ="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.registrado}}</a></td>
-              <td><i class="fa fa-shopping-cart"></i>              </td>
-              <td><i class="fa fa-heart"></i></td>
-            </tr>
-          
-            
-          </tbody>
-        </table>
-        
-        <a routerLink="/celulares/add" class="btn btn-success">Crear Celular</a>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="m-4 col-2" *ngFor="let c of celulares">
+      <div class="card">
+        <img src="https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/w_582,c_limit/iphonex-TA.jpg"
+          class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.modelo}}</a></h5>
+          <p class="card-text">{{c.imei}}</p>
+          <a href="#" class="btn btn-sm btn-outline-success mr-2">Ver Publicación</a>
+          <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-heart"></i></a>
+          <a href="" class="btn btn-sm btn-outline-danger mr-2"><i class="fa fa-shopping-cart"></i></a>
+        </div>
       </div>
     </div>
+
+  </div>
+  <div class="col-md-2">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Marca Celular</th>
+          <th>Modelo Celular</th>
+          <th>Referencia Celular</th>
+          <th>Celular Registrada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of celulares">
+          <td style="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.marca}}</a></td>
+          <td style="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.modelo}}</a>
+          </td>
+          <td style="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.referencia}}</a>
+          </td>
+          <td style="cursor: pointer;"><a class="figure-caption" routerLink="/celulares/{{c.imei}}">{{c.registrado}}</a>
+          </td>
+          <td><i class="fa fa-shopping-cart"></i> </td>
+          <td><i class="fa fa-heart"></i></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    <a routerLink="/celulares/add" class="btn btn-success">Crear Celular</a>
+  </div>
+</div>
