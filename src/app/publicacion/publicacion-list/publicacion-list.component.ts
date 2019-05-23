@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 import { Publicacion } from '../publicacion';
 import { PublicacionService } from '../publicacion.service';
 import { PublicacionDetail } from '../publicacion-detail';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ToastrService } from 'ngx-toastr';
 
 /**
  * El componente para listar publicaciones en CambiaPhone
@@ -18,10 +20,13 @@ export class PublicacionListComponent implements OnInit {
     * Constructor para el componente
     * @param publicacionService El proveedor del servicio publicacion
     */
-  constructor(private publicacionService: PublicacionService) { }
+  constructor(private publicacionService: PublicacionService,
+    private viewRef: ViewContainerRef,
+    private modalDialogService:ModalDialogService,
+    private toastrService: ToastrService) { }
 
     /**
-    * La lista de publicaciones que pertenecen a CambiaPhone
+    * La lista de publicacion que pertenecen a CambiaPhone
     */
     publicaciones: Publicacion[];
 
@@ -36,12 +41,12 @@ export class PublicacionListComponent implements OnInit {
     publicacion_id: number;
 
     /**
-     * La publicacion seleccionada
+     * El comprador seleccionado
      */
     selectedPublicacion : Publicacion; 
     
     /**
-     * Indica cual es el comprador seleccionado
+     * Indica cual es la publicación seleccionada
      * @param publicacion_id Identificador de la publicacion seleccionada
      */
     onSelected(publicacion_id: number):void {
@@ -72,7 +77,7 @@ export class PublicacionListComponent implements OnInit {
 }
 
 /**
- * Llama el servicio para obtener el detalle del comprador seleccionado
+ * Llama el servicio para obtener el detalle de la publicacion seleccionada
  */
 getPublicacionDetail(): void {
   this.publicacionService.getPublicacionDetail(this.publicacion_id)
@@ -83,15 +88,42 @@ getPublicacionDetail(): void {
       });
 }
 
+   /**
+    * Borra un comprador
+    */
+   deleteComprador(compradorId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Borrar un comprador',
+        childComponent: SimpleModalComponent,
+        data: {text: '¿Está seguro de eliminar este comprador?'},
+        actionButtons: [
+            {
+                text: 'Sí',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.compradorService.deleteComprador(compradorId).subscribe(() => {
+                        this.toastrService.error("El comprador se eliminó exitosamente", "Comprador eliminado");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
+}
+
 /**
-    * Este metodo va a inicializar el componente obteniendo la lista de publicaciones del servicio
+    * Este metodo va a inicializar el componente obteniendo la lista de compradores del servicio
     * Este metodo va a ser llamado cuando el componente sea creado
     */
   ngOnInit() {
     this.showCreate = false;
-    this.selectedPublicacion = undefined;
-    this.publicacion_id = undefined;
-    this.getPublicaciones();
+    this.selectedComprador = undefined;
+    this.comprador_id = undefined;
+    this.getCompradores();
   }
 
 }

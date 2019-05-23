@@ -24,28 +24,37 @@ export class PublicacionService {
   constructor(private http: HttpClient) { }
 
   /**
-    * Devuleve el objeto Observable que contiene la lista de publicaciones obtenidos del API
+    * Devuleve el objeto Observable que contiene la lista de publicaciones obtenidas del API
     * @returns La lista de publicaciones en tiempo real 
     */
    getPublicaciones(): Observable<Publicacion[]> {
     return this.http.get<Publicacion[]>(API_URL+publicaciones);
   }
 
-  /**
-    * Retorna el objeto observable con los detalles de una publicacion obtenido del API
-    * @returns Los detalles de la publicacion
+   /**
+    * Retorna el objeto observable con los detalles de una publicacion obtenido del API por medio del usuario
+    * @returns Los detalles del la publicacion
     */
    getPublicacionDetail(publicacionId): Observable<PublicacionDetail> {
     return this.http.get<PublicacionDetail>(`${API_URL}${publicaciones}/${publicacionId}`);
   }
 
   /**
-    * Crea una publicacion
+    * Crea una nueva publicacion
     * @param publicacion la nueva publicacion
-    * @returns La confirmacion de que la publicacion fue creada
+    * @returns La confirmacion de que el comprador fue creado
     */
   createPublicacion(publicacion):Observable<Publicacion>{
     return this.http.post<Publicacion>(API_URL+publicaciones, publicacion);
   }  
+
+  /**
+    * Borrar una publicacion
+    * @param publicacionId la publicacion que va a ser eliminada
+    * @returns True si la publicacion fue borrada, false de lo contrario
+    */
+   deletePublicacion(publicacionId): Observable<PublicacionDetail> {
+    return this.http.delete<PublicacionDetail>(API_URL + publicaciones + '/' + publicacionId);
+}
 
 }

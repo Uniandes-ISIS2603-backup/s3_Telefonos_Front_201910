@@ -11,15 +11,17 @@
        fechaPublicacion: any;
     
         /**
-        * array con el conjunto de imagenes de la publicaciÃ³n
+        * array con el conjunto de imagenes de la publicacion
         */
        imagenes: string[];
-       
+        /**
+        * boolean que modela si la publicacion se encuentra vendida
+        */
+       vendido: boolean;
        /**
         * El id de la publicacion
         */
        id: number;
-    
        /**
         * El precio de la publicacion
         */

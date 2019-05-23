@@ -1,13 +1,19 @@
 
 
 import { Publicacion } from "./publicacion";
-import { Factura } from "../factura/factura";
+import { Celular } from "../celular/celular";
+import { Tablet } from "../tablet/tablet";
 
 
 export class PublicacionDetail extends Publicacion {
+   
     /**
-     * Facturas asociadas al comprador
-   */
-    facturasDeCompra: Factura[];
-  
+     * Celular asociado a la publicacion
+     */
+    celular: Celular[];
+    /**
+     * tablet asociada a la publicacion
+     */
+    tablet: Tablet[];  
+   
 }

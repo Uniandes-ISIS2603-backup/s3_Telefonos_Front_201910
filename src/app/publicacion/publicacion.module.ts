@@ -9,7 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule } from 'ngx-toastr';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 
@@ -20,11 +20,12 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,  
+    NgxPermissionsModule.forRoot()
   ],
   declarations: [PublicacionListComponent, PublicacionDetailComponent, PublicacionCreateComponent],
   providers: [PublicacionService],
-  exports:[PublicacionListComponent]
+  exports:[PublicacionListComponent, PublicacionCreateComponent,  PublicacionDetailComponent]
 })
 export class PublicacionModule { }
  
